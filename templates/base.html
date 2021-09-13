@@ -1,0 +1,299 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>فرهنگ ما</title>
+    <!--fivicon icon-->
+    <link rel="icon" href="{% static 'img/fevicon.png' %}">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick-slide.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body class='sc5'>
+<!-- search popup area start -->
+<div class="search-popup" id="search-popup">
+    <form action="" class="search-form">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="جستجو.....">
+        </div>
+        <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+<!-- //. search Popup -->
+
+<!-- navbar start -->
+<header class="navbar-area">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container nav-container">
+            <div class="responsive-mobile-menu">
+                <button class="menu toggle-btn d-block d-lg-none" data-target="#themefie_main_menu"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-left"></span>
+                    <span class="icon-right"></span>
+                </button>
+            </div>
+            <div class="logo">
+                <a class="main-logo" href="{% url 'website:index' %}"><img src="{% static 'img/logo.png' %}" alt="img"></a>
+            </div>
+            <div class="nav-right-part nav-right-part-mobile">
+                <ul>
+                    <li><a class="search header-search" href="#"><i class="fa fa-search"></i></a></li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="themefie_main_menu">
+                <div class="single-input-wrap">
+                    <input type="text" placeholder="جستجو بین دوره های آموزشی ...">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+                <ul class="navbar-nav menu-open text-end">
+                    <li class="current-menu-item menu-item-has-children">
+                        <a href="#">صفحه نخست</a>
+                        <ul class="sub-menu">
+                            <li><a href="{% url 'website:index' %}">صفحه نخست 01</a></li>
+                            <li><a href="{% url 'website:home-2' %}">صفحه نخست 02</a></li>
+                            <li><a href="home-3.html">صفحه نخست 03</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">صفحات</a>
+                        <ul class="sub-menu">
+                            <li><a href="blog.html">وبلاگ</a></li>
+                            <li><a href="blog-cat.html">دسته بندی وبلاگ</a></li>
+                            <li><a href="blog-details.html">نوشته وبلاگ</a></li>
+                            <li><a href="course.html">دوره ها</a></li>
+                            <li><a href="course-details.html">نمونه دوره</a></li>
+                            <li><a href="category.html">دسته بندیها</a></li>
+                            <li><a href="instructor.html">اساتید</a></li>
+                            <li><a href="instructor-details.html">نمونه استاد</a></li>
+                            <li><a href="dashboard.html">پنل مدیریت</a></li>
+                            <li><a href="zoom-meeting.html">دوره ویژه</a></li>
+                            <li><a href="{% url 'website:contact' %}">ارتباط با ما</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="instructor.html">استاد شوید</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-right-part nav-right-part-desktop">
+                <ul>
+                    <li class="right-search">
+                        <a href="#"><i class="fa fa-search"></i></a>
+                        <div class="single-input-wrap">
+                            <input type="text" placeholder="جستجو بین دوره های آموزشی ...">
+                            <button><i class="fa fa-search"></i></button>
+                        </div>
+                    </li>
+                    <li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+                    <li><a href="">وارد شوید</a></li>
+                    <li>
+                        <a href="" class="btn btn-base-light">ثبت نام کنید</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="category-responsive d-xl-none d-block">
+    <div class="container">
+        <div class="category-slider owl-carousel">
+            <div class="item">
+                <a href="#">توسعه وب</a>
+            </div>
+            <div class="item"><a href="#">طراحی</a></div>
+            <div class="item"><a href="#">بازاریابی</a></div>
+            <div class="item"><a href="#">کسب و کار</a></div>
+            <div class="item"><a href="#">سئو</a></div>
+            <div class="item"><a href="#">عکاسی</a></div>
+            <div class="item"><a href="#">ویدیو</a></div>
+            <div class="item"><a href="#">سلامت و تناسب اندام</a></div>
+            <div class="item"><a href="#">موزیک</a></div>
+            <div class="item"><a href="#">دیگر موارد</a></div>
+        </div>
+    </div>
+</div>
+<div class="category-navbar navbar-area d-xl-block d-none">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container nav-container">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav menu-open">
+                    <li>
+                        <a href="#">توسعه وب</a>
+                    </li>
+                    <li>
+                        <a href="#">طراحی</a>
+                    </li>
+                    <li>
+                        <a href="#">بازاریابی</a>
+                    </li>
+                    <li>
+                        <a href="#">کسب و کار</a>
+                    </li>
+                    <li>
+                        <a href="#">سئو</a>
+                    </li>
+                    <li>
+                        <a href="#">عکاسی</a>
+                    </li>
+                    <li>
+                        <a href="#">تناسب اندام</a>
+                    </li>
+                    <li>
+                        <a href="#">موزیک</a>
+                    </li>
+                    <li>
+                        <a href="#">دیگر موارد</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- navbar end -->
+{% block content %}
+
+{% endblock %}
+<!-- footer area start -->
+<footer class="footer-area">
+    <div class="footer-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-4 col-sm-6">
+                    <div class="footer-widget widget widget_link">
+                        <h4 class="widget-title">دسته بندیها</h4>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <ul class="pe-5">
+                                    <li><a href="category.html">توسعه وب</a></li>
+                                    <li><a href="category.html">کسب و کار</a></li>
+                                    <li><a href="category.html">حسابداری مالی</a></li>
+                                    <li><a href="category.html">نرم افزارها</a></li>
+                                    <li><a href="category.html">سئو</a></li>
+                                    <li><a href="category.html">طراحی</a></li>
+                                    <li><a href="category.html">بازاریابی</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4">
+                                <ul class="pe-5">
+                                    <li><a href="category.html">سبک زندگی</a></li>
+                                    <li><a href="category.html">عکاسی</a></li>
+                                    <li><a href="category.html">تناسب اندام</a></li>
+                                    <li><a href="category.html">موزیک</a></li>
+                                    <li><a href="category.html">طراحی یواسک</a></li>
+                                    <li><a href="category.html">سئو</a></li>
+                                    <li><a href="category.html">کسب و کار</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4">
+                                <ul>
+                                    <li><a href="category.html">خدمات مشتریان</a></li>
+                                    <li><a href="category.html">منابع</a></li>
+                                    <li><a href="category.html">رهبری و مدیریت</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="footer-widget widget widget_link">
+                        <h4 class="widget-title">صفحات</h4>
+                        <ul class="pe-4">
+                            <li><a href="blog.html">وبلاگ</a></li>
+                            <li><a href="blog-cat.html">دسته بندی وبلاگ</a></li>
+                            <li><a href="blog-details.html">نوشته وبلاگ</a></li>
+                            <li><a href="course.html">دوره ها</a></li>
+                            <li><a href="course-details.html">نمونه دوره</a></li>
+                            <li><a href="instructor.html">اساتید</a></li>
+                            <li><a href="instructor-details.html">نمونه استاد</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="footer-widget widget widget_link">
+                        <h4 class="widget-title">پشتیبانی</h4>
+                        <ul class="pe-4">
+                            <li><a href="{% url 'website:index' %}">فایل راهنما</a></li>
+                            <li><a href="faq.html">پرسش های متداول</a></li>
+                            <li><a href="dashboard.html">پنل مدیریت</a></li>
+                            <li><a href="{% url 'website:contact' %}">ارتباط با ما</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer bottom-->
+    <div class="container">
+        <div class="footer-bottom">
+            <div class="row">
+                <div class="col-xl-7 align-self-center">
+                    <div class="d-md-flex align-items-center mb-4 mb-xl-0">
+                        <div class="logo d-inline-block">
+                            <img src="{% static 'img/logo.png' %}" alt="img">
+                        </div>
+                        <div class="copyright-area">
+                            <p>کپی رایت © 2021. کلیه حقوق محفوظ است</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 align-self-center text-xl-end">
+                    <ul class="social-area d-inline-block">
+                        <li><a class="active" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                    </ul>
+                    <select class="single-select float-sm-end">
+                        <option>انگلیسی</option>
+                        <option value="asc">پارسی</option>
+                        <option value="desc">روسی</option>
+                        <option value="pop">چینی</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer bottom-->
+</footer>
+<!-- footer area end -->
+
+<!-- back-to-top end -->
+<div class="back-to-top">
+    <span class="back-top"><i class="fas fa-angle-double-up"></i></span>
+</div>
+
+
+<!-- all plugins here -->
+<script src="{% static 'js/jquery.3.6.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/imageloded.min.js' %}"></script>
+<script src="{% static 'js/counterup.js' %}"></script>
+<script src="{% static 'js/waypoint.js' %}"></script>
+<script src="{% static 'js/magnific.min.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/nice-select.min.js' %}"></script>
+<script src="{% static 'js/fontawesome.min.js' %}"></script>
+<script src="{% static 'js/ripple.js' %}"></script>
+<script src="{% static 'js/owl.min.js' %}"></script>
+<script src="{% static 'js/slick-slider.min.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<!-- main js  -->
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
