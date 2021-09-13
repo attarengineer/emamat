@@ -1,0 +1,282 @@
+@font-face {
+font-family: 'IranNastaliq';
+src: url('../fonts/IranNastaliq.eot?#') format('eot'),
+url('../fonts/IranNastaliq.ttf') format('truetype'),
+url('../fonts/IranNastaliq.woff') format('woff');
+}
+
+@font-face {
+font-family:"naskh"; 
+font-weight:normal;
+src: url( " ../fonts/naskh.eot" );
+src: local( "☺" ),
+url( " ../fonts/naskh.woff" )
+format( "woff" ),
+url( " ../fonts/naskh.ttf" )
+format( "truetype" );
+}
+@font-face {
+font-family:"Parastoo";
+font-weight:normal;
+src: url( " ../fonts/Parastoo.eot" );
+src: local( "☺" ),
+url( " ../fonts/Parastoo.woff" )
+format( "woff" ),
+url( " ../fonts/Parastoo.ttf" )
+format( "truetype" );
+}
+@font-face {
+font-family:"BYekan-light";
+font-weight:normal;
+src: url( " ../fonts/BYekan-light.eot" );
+src: local( "☺" ),
+url( " ../fonts/BYekan-light.woff" )
+format( "woff" ),
+url( " ../fonts/BYekan-light.ttf" )
+format( "truetype" );
+}
+
+@font-face {
+font-family:"Sans_Medium";
+font-weight:normal;
+src: url( " ../fonts/IRANSansWeb_Medium.eot" );
+src: local( "☺" ),
+url( " ../fonts/IRANSansWeb_Medium.woff" )
+format( "woff" ),
+url( " ../fonts/IRANSansWeb_Medium.ttf" )
+format( "truetype" );
+}
+@font-face {
+font-family:"Sans_Light";
+font-weight:normal;
+src: url( " ../fonts/IRANSansWeb_Light.eot" );
+src: local( "☺" ),
+url( " ../fonts/IRANSansWeb_Light.woff" )
+format( "woff" ),
+url( " ../fonts/IRANSansWeb_Light.ttf" )
+format( "truetype" );
+}
+
+
+body {
+background: #f3f3f3;
+}
+
+a{color:#4d4d4d;text-decoration:none!important}
+* {
+font: normal 14px BYekan-light;
+line-height: 24px;
+direction: rtl;
+}
+
+.row {
+margin-right: 0;
+margin-left: 0;
+}
+
+.p-main-frame {
+padding: 50px;
+background: #fff;
+}
+
+.p-header {
+width: 100%;
+float: right;
+}
+
+.p-logo {
+float: right;
+margin-top: -10px;
+}
+.p-logo h1{
+font-family: "naskh";
+font-size: 25px;	
+}
+.p-logo.full {
+width: 100%;
+background: none;
+}
+
+.p-logo img:nth-child(1) {
+float: right;
+}
+
+.p-logo img:nth-child(2) {
+float: left;
+}
+
+.p-detail {
+float: left;
+margin-bottom: 40px;
+width: 50%;
+padding-right: 14px;
+}
+
+.p-detail div {
+float: right;
+width: 50%;
+}
+
+.p-detail div span:nth-child(1) {
+color: #a7a9ac;
+}
+
+.p-detail div span:nth-child(2) {
+color: #6d6e71;
+}
+
+.news-header {
+width: 100%;
+float: right;
+border-bottom: 1px solid #eee;
+padding-bottom: 25px;
+}
+
+.news-header span {
+width: calc(100% - 270px);
+float: right;
+}
+
+.news-header span:nth-child(2), .news-header span:nth-child(4) {
+color: #a7a9ac;
+}
+.news-header span:nth-child(3) {
+font-size: 20px;
+font-weight:normal;
+font-family:"naskh"; 
+line-height: 35px;
+color: #333;
+padding: 9px 0 17px;
+}
+.news-header span:nth-child(4) {
+font-size:14px;
+line-height: 30px;
+font-family:"naskh"; 
+}
+
+.news-header img {
+float: right;
+width: 250px;
+margin-left: 20px;
+}
+
+.news-header.full span {
+width: 100%;
+}
+
+.news-header.full img {
+display: none
+}
+
+.p-nt {
+float: right;
+width: 100%;
+}
+
+.p-nt p {
+font: 16px naskh;
+text-align: justify;
+}
+
+.p-nt img {
+width: 100% !important;
+}
+
+.container {
+margin-right: auto;
+margin-left: auto;
+}
+
+.container:after {
+clear: both;
+}
+
+.container:before, .container:after {
+display: table;
+content: " ";
+}
+
+*, *:before, *:after {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+@media only screen and (max-width: 768px) {
+.container {
+max-width: 100%;
+}
+.p-logo {
+    width: 100%;
+}
+.p-detail {
+    float:right;
+    width: 100%;
+    padding-right: 0;
+    margin-top: 20px;
+}
+
+.news-header img {
+    float: right;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 30px;
+}
+.news-header span {
+    width: 100%;
+}
+}
+
+@media only screen and (max-width: 668px) {
+.p-detail div{width: 100%;}	
+}
+
+
+@media (min-width: 992px) {
+.container {
+max-width: 970px;
+}
+}
+
+@media (min-width: 1200px) {
+.container {
+max-width: 1170px;
+}
+}
+
+@media only screen and (max-width: 1600px) {
+.setting {
+position: fixed;
+width: 160px;
+left: 100px;
+}
+
+.change-font {
+width: 100%;
+padding: 20px 12px !important;
+}
+
+.check-frame > div {
+width: 100%;
+}
+
+.check-frame {
+border-bottom: solid 1px #81858a;
+}
+}
+
+@media only screen and (max-width: (max-width: 768px) {
+.news-header img, .news-header span, .p-logo, .p-detail {
+width: 100%;
+}
+}
+
+@media print {
+.news-header span:nth-child(4) {
+width: 100%;
+}
+
+.p-detail span {
+font-size: 11px;
+}
+}
