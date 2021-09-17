@@ -11,6 +11,7 @@
                     <div class="box-a">
                         <div class="box-b">
                             <h4> آرشیو » اخبار</h4><b></b>
+                            {% for post in posts %}
                             <section class="apnews ne_three">
                                 <div class="polist clearfix">
                                     <div class="item clearfix">
@@ -26,123 +27,13 @@
                                         <div class="det">
                                             <div class="met">
                                             </div>
-                                            <h2><a href="https://emamat.org/register/" title="ثبت نام سطح ۴ امام شناسی">ثبت
-                                                نام سطح ۴ امام شناسی</a></h2>
-                                            <p></p>
-                                            <p>بسم الله الرحمن الرحیم مرکز تخصصی امام شناسی برای نیم‌سال اول سال تحصیلی
-                                                ۱۴۰۰-۱۴۰۱&nbsp; (مهرماه) از میان طلاب حوزه های علمیه در رشته و گرایش های
-                                                زیر&nbsp; در سطح ۴&nbsp; دانش پژوه می ­پذیرد: عنوان رشته و گرایش ردیف
-                                                امامت – گرایش امامت تطبیقی ۱ امامت – گرایش امام شناسی ۲ &nbsp; شرایط ثبت
-                                                نام: […]</p>
-                                            <p></p>
+                                            <h2><a href="{% url 'blog:blog-single' pid=post.id %}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                                            <p>{{ post.content }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </section>
-                            <section class="apnews ne_three">
-                                <div class="polist clearfix">
-                                    <div class="item clearfix">
-                                        <div class="thumbnail">
-                                            <a href="https://emamat.org/%d8%b1%d8%b4%d8%aa%d9%87-%d8%a7%d9%85%d8%a7%d9%85%d8%aa-%d8%b3%d8%b7%d8%ad-3-%d8%ad%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85%db%8c%d9%87/"><img
-                                                    src="https://emamat.org/wp-content/uploads/2021/05/2121-220x160.jpg"
-                                                    alt="رشته امامت (سطح ۳ حوزه علمیه)"></a>
-                                            <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 ماه
-                                                قبل
-                                            </div>
-                                            <div class="hoov"></div>
-                                        </div>
-                                        <div class="det">
-                                            <div class="met">
-                                                <span class="cat">معاونت آموزش</span></div>
-                                            <h2>
-                                                <a href="https://emamat.org/%d8%b1%d8%b4%d8%aa%d9%87-%d8%a7%d9%85%d8%a7%d9%85%d8%aa-%d8%b3%d8%b7%d8%ad-3-%d8%ad%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85%db%8c%d9%87/"
-                                                   title="رشته امامت (سطح ۳ حوزه علمیه)">رشته امامت (سطح ۳ حوزه
-                                                    علمیه)</a></h2>
-                                            <p>سطح سه رشته امامت اهل‌بیت علیهم‌السلام‏، سومین مقطع از تحصیلات حوزوی و
-                                                یکی از رشته ‏های حوزه دانشی «کلام‏، ادیان‏، فرق و مذاهب» است كه در آن
-                                                طلاب‏، ضمن شناخت عمیق مسائل اعتقادی امامیه‏، مبانی و مسائل امامت را به
-                                                صورت استدلالی آموخته و توانایی پاسخگویی به نیازهای مربوط و توان تحقیق در
-                                                حد تحلیل و بررسی تطبیقی و نقد‏، تبلیغ و تدریس آن را پیدا می‌كنند و در
-                                                پایان‏، موفق به دریافت دانشنامه سطح سه رشته امامت اهل‌بیت علیهم‌السلام
-                                                می‌شوند. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="apnews ne_three">
-                                <div class="polist clearfix">
-                                    <div class="item clearfix">
-                                        <div class="thumbnail">
-                                            <a href="https://emamat.org/%d8%ad%d8%af%db%8c%d8%ab-%d8%b3%db%8c%d8%af%d8%a7-%d8%b4%d8%a8%d8%a7%d8%a8-%d8%a3%d9%87%d9%84-%d8%a7%d9%84%d8%ac%d9%86%d9%87-%d9%88-%d9%85%d8%b3%d8%a3%d9%84%d9%87-%d8%a7%d9%81%d8%b6%d9%84/"><img
-                                                    src="https://emamat.org/wp-content/uploads/2021/05/9e695766e56cd2f5910553065b7b31e4_XL-220x160.jpg"
-                                                    alt="حدیث «سیدا شباب أهل الجنه» و مسأله افضلیّت امام"></a>
-                                            <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 ماه
-                                                قبل
-                                            </div>
-                                            <div class="hoov"></div>
-                                        </div>
-                                        <div class="det">
-                                            <div class="met">
-                                            </div>
-                                            <h2>
-                                                <a href="https://emamat.org/%d8%ad%d8%af%db%8c%d8%ab-%d8%b3%db%8c%d8%af%d8%a7-%d8%b4%d8%a8%d8%a7%d8%a8-%d8%a3%d9%87%d9%84-%d8%a7%d9%84%d8%ac%d9%86%d9%87-%d9%88-%d9%85%d8%b3%d8%a3%d9%84%d9%87-%d8%a7%d9%81%d8%b6%d9%84/"
-                                                   title="حدیث «سیدا شباب أهل الجنه» و مسأله افضلیّت امام">حدیث «سیدا
-                                                    شباب أهل الجنه» و مسأله افضلیّت امام</a></h2>
-                                            <p>یکی از مهم‏ترین موارد اختلاف میان شیعه و اهل سنت، مسأله تفاضل میان
-                                                اهل‏بیت علیهم السلام و خلفای سه‏گانه است. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="apnews ne_three">
-                                <div class="polist clearfix">
-                                    <div class="item clearfix">
-                                        <div class="thumbnail">
-                                            <a href="https://emamat.org/%d8%af%d8%b1%d8%a2%d9%85%d8%af%db%8c-%d8%a8%d8%b1-%d8%aa%d8%a7%d8%b1%db%8c%d8%ae-%da%a9%d9%84%d8%a7%d9%85-%d8%a7%d9%85%d8%a7%d9%85%db%8c%d9%87-%d8%af%d8%b1-%d8%ad%d9%84%d8%a8/"><img
-                                                    src="https://emamat.org/wp-content/uploads/2021/05/0b5f7ec270f316b1345a82b850713678_XL-220x160.jpg"
-                                                    alt="درآمدی بر تاریخ کلام امامیه در حلب"></a>
-                                            <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 ماه
-                                                قبل
-                                            </div>
-                                            <div class="hoov"></div>
-                                        </div>
-                                        <div class="det">
-                                            <div class="met">
-                                                <span class="cat">کلام امامیه</span></div>
-                                            <h2>
-                                                <a href="https://emamat.org/%d8%af%d8%b1%d8%a2%d9%85%d8%af%db%8c-%d8%a8%d8%b1-%d8%aa%d8%a7%d8%b1%db%8c%d8%ae-%da%a9%d9%84%d8%a7%d9%85-%d8%a7%d9%85%d8%a7%d9%85%db%8c%d9%87-%d8%af%d8%b1-%d8%ad%d9%84%d8%a8/"
-                                                   title="درآمدی بر تاریخ کلام امامیه در حلب">درآمدی بر تاریخ کلام
-                                                    امامیه در حلب</a></h2>
-                                            <p>حلب، از شهرهای شمالی شامات، در زمان حضور ائمه(ع)، هیچ‌ گاه مرکزی شیعی
-                                                دانسته نمی‌شد؛ </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="apnews ne_three">
-                                <div class="polist clearfix">
-                                    <div class="item clearfix">
-                                        <div class="thumbnail">
-                                            <a href="https://emamat.org/%d8%a7%d8%b9%d8%aa%d8%b1%d8%a7%d8%b6-%d8%b9%d9%84%d8%a7%d9%85%d9%87-%d8%b4%d8%b1%d9%81%e2%80%8c%d8%a7%d9%84%d8%af%db%8c%d9%86-%d8%a8%d9%87-%d8%aa%d8%ae%d8%b1%db%8c%d8%a8-%d8%a8%d9%82%d8%a7%d8%b9/"><img
-                                                    src="https://emamat.org/wp-content/uploads/2021/05/e675bfe430f43f565b694df44587acc4_XL-220x160.jpg"
-                                                    alt="اعتراض علامه شرف‌الدین به تخریب بقاع بقیع و تلاش های بین‌المللی"></a>
-                                            <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 ماه
-                                                قبل
-                                            </div>
-                                            <div class="hoov"></div>
-                                        </div>
-                                        <div class="det">
-                                            <div class="met">
-                                                <span class="cat">امامت پژوهی</span></div>
-                                            <h2>
-                                                <a href="https://emamat.org/%d8%a7%d8%b9%d8%aa%d8%b1%d8%a7%d8%b6-%d8%b9%d9%84%d8%a7%d9%85%d9%87-%d8%b4%d8%b1%d9%81%e2%80%8c%d8%a7%d9%84%d8%af%db%8c%d9%86-%d8%a8%d9%87-%d8%aa%d8%ae%d8%b1%db%8c%d8%a8-%d8%a8%d9%82%d8%a7%d8%b9/"
-                                                   title="اعتراض علامه شرف‌الدین به تخریب بقاع بقیع و تلاش های بین‌المللی">اعتراض
-                                                    علامه شرف‌الدین به تخریب بقاع بقیع و تلاش های بین‌المللی</a></h2>
-                                            <p>نویسنده: محمدسعید نجاتی </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
