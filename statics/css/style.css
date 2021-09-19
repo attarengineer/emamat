@@ -678,7 +678,7 @@ margin-top: 5px;
 }
 .box-b b::before {
 position: absolute;
-left: -50px;
+left: -56px;
 width: 54px;
 height: 2px;
 background:#d0d0d0;

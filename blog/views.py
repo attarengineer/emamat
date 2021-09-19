@@ -9,6 +9,6 @@ def blog_archive_view(request):
 
 
 def blog_single_view(request, pid):
-    post = get_object_or_404(Post, pk=pid)
+    post = get_object_or_404(Post, pk=pid, status=1)
     context = {'post': post}
     return render(request, '../templates/blog/blog-single.html', context)

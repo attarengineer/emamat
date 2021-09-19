@@ -19,13 +19,13 @@
                         <div class="imed">
                             <div class="thumbnail">
                                 <div class="mass"></div>
-                                <a href="https://emamat.org/%d8%a7%d8%b9%d8%aa%d8%b1%d8%a7%d8%b6-%d8%b9%d9%84%d8%a7%d9%85%d9%87-%d8%b4%d8%b1%d9%81%e2%80%8c%d8%a7%d9%84%d8%af%db%8c%d9%86-%d8%a8%d9%87-%d8%aa%d8%ae%d8%b1%db%8c%d8%a8-%d8%a8%d9%82%d8%a7%d8%b9/"><img
-                                        src="https://emamat.org/wp-content/uploads/2021/05/e675bfe430f43f565b694df44587acc4_XL.jpg"
-                                        alt="{{ post.title }}"></a>
-                                <div class="datep"><i class="fa fa-clock-o" aria-hidden="true"></i> 01 خرداد 1400 - 9:35
+                                <a href="{% url 'blog:blog-single' pid=post.id %}">
+                                    <img src="{{ post.image.url }}" alt="{{ post.title }}"></a>
+                                <div class="datep">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.published_date|date:"H:i - Y/m/d" }}
                                 </div>
-                                <div class="shtep"><i class="fa fa-info" aria-hidden="true"></i> شناسه : 436</div>
-                                <div class="letep"><b>بازدید </b><span>242</span></div>
+                                <div class="shtep"><i class="fa fa-info" aria-hidden="true"></i> شناسه : {{ post.id }}</div>
+                                <div class="letep"><b>بازدید </b><span>{{ post.counter_views }}</span></div>
                             </div>
                             <div class="excerpt">
                                 <div class="post_like"><span class="sl-wrapper"><a
@@ -33,12 +33,17 @@
                                         class="sl-button sl-button-436" data-nonce="672e58531c" data-post-id="436"
                                         data-iscomment="0" title="پسندیدم"><span class="sl-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve"><path id="heart" d="M64 127.5C17.1 79.9 3.9 62.3 1 44.4c-3.5-22 12.2-43.9 36.7-43.9 10.5 0 20 4.2 26.4 11.2 6.3-7 15.9-11.2 26.4-11.2 24.3 0 40.2 21.8 36.7 43.9C124.2 62 111.9 78.9 64 127.5zM37.6 13.4c-9.9 0-18.2 5.2-22.3 13.8C5 49.5 28.4 72 64 109.2c35.7-37.3 59-59.8 48.6-82 -4.1-8.7-12.4-13.8-22.3-13.8 -15.9 0-22.7 13-26.4 19.2C60.6 26.8 54.4 13.4 37.6 13.4z"></path>♥</svg></span><span
                                         class="sl-count">6</span></a><span id="sl-loader"></span></span></div>
-                                <span class="catpo">امامت پژوهی</span>
+
+                                <div class="categorie">
+                                دسته بندی :
+                                {% for cat in post.category.all %}
+                                    <a href="#"> <span>{{ cat.name }}</span></a>{% if not forloop.last %} - {% endif %}
+                                 {% endfor %}
+                                </div>
                                 <div class="tttl"><h1><a href="">{{ post.title }}</a></h1></div>
-
                                 <div class="manba">
-                                    <span> نویسنده : محمدسعید نجاتی </span></div>
-
+                                    <span> نویسنده : {{ post.author.get_full_name }} </span>
+                                </div>
                             </div>
                         </div>
                         <div class="conteneur_barre_outils">

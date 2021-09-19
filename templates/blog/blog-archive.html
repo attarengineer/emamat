@@ -12,27 +12,29 @@
                         <div class="box-b">
                             <h4> آرشیو » اخبار</h4><b></b>
                             {% for post in posts %}
-                            <section class="apnews ne_three">
-                                <div class="polist clearfix">
-                                    <div class="item clearfix">
-                                        <div class="thumbnail">
-                                            <a href="https://emamat.org/register/"><img
-                                                    src="https://emamat.org/wp-content/uploads/2021/06/امام-شناسی-220x160.jpg"
-                                                    alt="ثبت نام سطح ۴ امام شناسی"></a>
-                                            <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 ماه
-                                                قبل
+                                <section class="apnews ne_three">
+                                    <div class="polist clearfix">
+                                        <div class="item clearfix">
+                                            <div class="thumbnail">
+                                                <a href="{% url 'blog:blog-single' pid=post.id %}">
+                                                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                                                </a>
+                                                <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3
+                                                    ماه
+                                                    قبل
+                                                </div>
+                                                <div style="width: 40px; height: 50px;" class="letep"><b style="margin: 0; background: #333;padding: 0;text-align: center;">بازدید </b><span>{{ post.counter_views }}</span></div>
+                                                <div class="hoov"></div>
                                             </div>
-                                            <div class="hoov"></div>
-                                        </div>
-                                        <div class="det">
-                                            <div class="met">
+                                            <div class="det">
+                                                <div class="met">
+                                                </div>
+                                                <h2><a href="{% url 'blog:blog-single' pid=post.id %}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                                                <p>{{ post.content|truncatechars:300 }}</p>
                                             </div>
-                                            <h2><a href="{% url 'blog:blog-single' pid=post.id %}" title="{{ post.title }}">{{ post.title }}</a></h2>
-                                            <p>{{ post.content }}</p>
                                         </div>
                                     </div>
-                                </div>
-                            </section>
+                                </section>
                             {% endfor %}
                         </div>
                     </div>

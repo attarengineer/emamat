@@ -187,178 +187,47 @@
     </div>
     <div class="container inn">
         <div class="ap_news">
-
-
             <div class="boxe-tab">
                 <div class="contine">
                     <div class="tab-post">
                         <div class="right"></div>
-                        <strong class="tablinks" onclick="openCity(event, 'item-1')" id="defaultOpen">آخرین
-                            اخبار</strong><strong class="tablinks" onclick="openCity(event, 'item-2')">نقد و
-                        بررسی</strong><strong class="tablinks"
-                                              onclick="openCity(event, 'item-3')">اقتصاد</strong><strong
-                            class="tablinks" onclick="openCity(event, 'item-4')">فرهنگ</strong><strong
-                            class="tablinks" onclick="openCity(event, 'item-5')">جامعه</strong><strong
-                            class="tablinks" onclick="openCity(event, 'item-6')">ورزش</strong>
+                        <strong class="tablinks" onclick="openCity(event, 'item-1')" id="defaultOpen">آخرین اخبار</strong>
+                        <strong class="tablinks" onclick="openCity(event, 'item-2')">نقد و بررسی</strong>
+                        <strong class="tablinks" onclick="openCity(event, 'item-3')">اقتصاد</strong>
+                        <strong class="tablinks" onclick="openCity(event, 'item-4')">فرهنگ</strong>
+                        <strong class="tablinks" onclick="openCity(event, 'item-5')">جامعه</strong>
+                        <strong class="tablinks" onclick="openCity(event, 'item-6')">ورزش</strong>
                         <div class="left"></div>
                     </div>
                     <div id="item-1" class="tabcontent">
                         <ul class="item-1">
-                            <section class="apnews ne_three">
-                                <div class="polist clearfix">
-                                    <div class="item clearfix">
-                                        <div class="thumbnail">
-                                            <a href="https://emamat.org/register/"><img
-                                                    src="https://emamat.org/wp-content/uploads/2021/06/امام-شناسی-220x160.jpg"
-                                                    alt="ثبت نام سطح ۴ امام شناسی"></a>
-                                            <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3
-                                                ماه قبل
+                            {% for post in posts %}
+                                <section class="apnews ne_three">
+                                    <div class="polist clearfix">
+                                        <div class="item clearfix">
+                                            <div class="thumbnail">
+                                                <a href="{% url 'blog:blog-single' pid=post.id %}">
+                                                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                                                </a>
+                                                <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3
+                                                    ماه
+                                                    قبل
+                                                </div>
+                                                <div style="width: 40px; height: 50px;" class="letep"><b style="margin: 0;padding: 0;text-align: center;">بازدید </b><span>{{ post.counter_views }}</span></div>
+                                                <div class="hoov"></div>
                                             </div>
-                                            <div class="hoov"></div>
-                                        </div>
-                                        <div class="det">
-                                            <div class="met">
+                                            <div class="det">
+                                                <div class="met">
+                                                </div>
+                                                <h2><a href="{% url 'blog:blog-single' pid=post.id %}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                                                <p>{{ post.content|truncatechars:300 }}</p>
                                             </div>
-                                            <h2><a href="https://emamat.org/register/"
-                                                   title="ثبت نام سطح ۴ امام شناسی">ثبت نام سطح ۴ امام شناسی</a>
-                                            </h2>
-                                            <p>
-                                            <p>بسم الله الرحمن الرحیم مرکز تخصصی امام شناسی برای نیم‌سال اول سال
-                                                تحصیلی ۱۴۰۰-۱۴۰۱  (مهرماه) از میان طلاب حوزه های علمیه در رشته و
-                                                گرایش های زیر  در سطح ۴  دانش پژوه می ­پذیرد: عنوان رشته و گرایش
-                                                ردیف امامت &#8211; گرایش امامت تطبیقی ۱ امامت &#8211; گرایش امام
-                                                شناسی ۲ &nbsp; شرایط ثبت نام: [&hellip;]</p>
-                                            </p>
                                         </div>
                                     </div>
-                                </div>
-                            </section>
-                            <section class="apnews ne_three">
-                                <div class="polist clearfix">
-                                    <div class="item clearfix">
-                                        <div class="thumbnail">
-                                            <a href="https://emamat.org/%d8%a7%d9%85%d8%a7%d9%85%d8%aa-%da%af%d8%b1%d8%a7%db%8c%d8%b4-%d8%a7%d9%85%d8%a7%d9%85%d8%aa-%d8%aa%d8%b7%d8%a8%db%8c%d9%82%db%8c-%d8%b3%d8%b7%d8%ad4-%d8%ad%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85%db%8c/"><img
-                                                    src="https://emamat.org/wp-content/uploads/2021/05/2123-220x160.jpg"
-                                                    alt="امامت گرایش امامت تطبیقی (سطح۴ حوزه علمیه)"></a>
-                                            <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3
-                                                ماه قبل
-                                            </div>
-                                            <div class="hoov"></div>
-                                        </div>
-                                        <div class="det">
-                                            <div class="met">
-                                                <span class="cat">معاونت آموزش</span></div>
-                                            <h2>
-                                                <a href="https://emamat.org/%d8%a7%d9%85%d8%a7%d9%85%d8%aa-%da%af%d8%b1%d8%a7%db%8c%d8%b4-%d8%a7%d9%85%d8%a7%d9%85%d8%aa-%d8%aa%d8%b7%d8%a8%db%8c%d9%82%db%8c-%d8%b3%d8%b7%d8%ad4-%d8%ad%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85%db%8c/"
-                                                   title="امامت گرایش امامت تطبیقی (سطح۴ حوزه علمیه)">امامت گرایش
-                                                    امامت تطبیقی (سطح۴ حوزه علمیه)</a></h2>
-                                            <p>رشته آموزشی - پژوهشی «امامت» با گرایش‌های مذکور، چهارمین مقطع از
-                                                مقاطع حوزوی و یکی از رشته‌های حوزه دانشی «کلام، ادیان، فرق و مذاهب»
-                                                است که در آن طلاب، ضمن بررسی تحلیلی و استدلالی مبانی و مسائل امامت و
-                                                ولایت اهل‌بیت علیهم‌السلام و نقد و ارزیابی نظریه‌های سایر مذاهب
-                                                اسلامی، نسبت به افزایش توان پاسخ­گویی به نیازهای علمی و تخصصی، توان
-                                                تحقیق، تحلیل، بررسی تطبیقی و نظریه پردازی درباره مسائل امامت را پیدا
-                                                می­کنند و در پایان، موفق به دریافت دانش نامه سطح 4 در رشته «امامت»
-                                                با یکی از گرایش‌های «امام‌شناسی» و یا «تطبیقی بین‌المذاهب»
-                                                می­شوند. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="apnews ne_three">
-                                <div class="polist clearfix">
-                                    <div class="item clearfix">
-                                        <div class="thumbnail">
-                                            <a href="https://emamat.org/%d8%a7%d9%85%d8%a7%d9%85%d8%aa-%da%af%d8%b1%d8%a7%db%8c%d8%b4-%d8%a7%d9%85%d8%a7%d9%85-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%d8%b3%d8%b7%d8%ad4-%d8%ad%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85%db%8c%d9%87/"><img
-                                                    src="https://emamat.org/wp-content/uploads/2021/05/2122-220x160.jpg"
-                                                    alt="امامت گرایش امام شناسی (سطح۴ حوزه علمیه)"></a>
-                                            <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3
-                                                ماه قبل
-                                            </div>
-                                            <div class="hoov"></div>
-                                        </div>
-                                        <div class="det">
-                                            <div class="met">
-                                                <span class="cat">معاونت آموزش</span></div>
-                                            <h2>
-                                                <a href="https://emamat.org/%d8%a7%d9%85%d8%a7%d9%85%d8%aa-%da%af%d8%b1%d8%a7%db%8c%d8%b4-%d8%a7%d9%85%d8%a7%d9%85-%d8%b4%d9%86%d8%a7%d8%b3%db%8c-%d8%b3%d8%b7%d8%ad4-%d8%ad%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85%db%8c%d9%87/"
-                                                   title="امامت گرایش امام شناسی (سطح۴ حوزه علمیه)">امامت گرایش امام
-                                                    شناسی (سطح۴ حوزه علمیه)</a></h2>
-                                            <p>رشته آموزشی - پژوهشی «امامت» با گرایش‌های مذکور، چهارمین مقطع از
-                                                مقاطع حوزوی و یکی از رشته‌های حوزه دانشی «کلام، ادیان، فرق و مذاهب»
-                                                است که در آن طلاب، ضمن بررسی تحلیلی و استدلالی مبانی و مسائل امامت و
-                                                ولایت اهل‌بیت علیهم‌السلام و نقد و ارزیابی نظریه‌های سایر مذاهب
-                                                اسلامی، نسبت به افزایش توان پاسخ­گویی به نیازهای علمی و تخصصی، توان
-                                                تحقیق، تحلیل، بررسی تطبیقی و نظریه پردازی درباره مسائل امامت را پیدا
-                                                می­کنند و در پایان، موفق به دریافت دانش نامه سطح 4 در رشته «امامت»
-                                                با یکی از گرایش‌های «امام‌شناسی» و یا «تطبیقی بین‌المذاهب»
-                                                می­شوند. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="apnews ne_three">
-                                <div class="polist clearfix">
-                                    <div class="item clearfix">
-                                        <div class="thumbnail">
-                                            <a href="https://emamat.org/%d8%b1%d8%b4%d8%aa%d9%87-%d8%a7%d9%85%d8%a7%d9%85%d8%aa-%d8%b3%d8%b7%d8%ad-3-%d8%ad%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85%db%8c%d9%87/"><img
-                                                    src="https://emamat.org/wp-content/uploads/2021/05/2121-220x160.jpg"
-                                                    alt="رشته امامت (سطح ۳ حوزه علمیه)"></a>
-                                            <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3
-                                                ماه قبل
-                                            </div>
-                                            <div class="hoov"></div>
-                                        </div>
-                                        <div class="det">
-                                            <div class="met">
-                                                <span class="cat">معاونت آموزش</span></div>
-                                            <h2>
-                                                <a href="https://emamat.org/%d8%b1%d8%b4%d8%aa%d9%87-%d8%a7%d9%85%d8%a7%d9%85%d8%aa-%d8%b3%d8%b7%d8%ad-3-%d8%ad%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85%db%8c%d9%87/"
-                                                   title="رشته امامت (سطح ۳ حوزه علمیه)">رشته امامت (سطح ۳ حوزه
-                                                    علمیه)</a></h2>
-                                            <p>سطح سه رشته امامت اهل‌بیت علیهم‌السلام‏، سومین مقطع از تحصیلات حوزوی
-                                                و یکی از رشته ‏های حوزه دانشی «کلام‏، ادیان‏، فرق و مذاهب» است كه در
-                                                آن طلاب‏، ضمن شناخت عمیق مسائل اعتقادی امامیه‏، مبانی و مسائل امامت
-                                                را به صورت استدلالی آموخته و توانایی پاسخگویی به نیازهای مربوط و
-                                                توان تحقیق در حد تحلیل و بررسی تطبیقی و نقد‏، تبلیغ و تدریس آن را
-                                                پیدا می‌كنند و در پایان‏، موفق به دریافت دانشنامه سطح سه رشته امامت
-                                                اهل‌بیت علیهم‌السلام می‌شوند. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="apnews ne_three">
-                                <div class="polist clearfix">
-                                    <div class="item clearfix">
-                                        <div class="thumbnail">
-                                            <a href="https://emamat.org/%d9%86%d8%b4%d8%b3%d8%aa-%d8%b9%d9%84%d9%85%db%8c-%d8%a2%d9%85%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85-%d8%a7%d9%85%d8%a7%d9%85-%d8%af%d8%b1-%d9%85%db%8c%d8%b1%d8%a7%d8%ab-%da%a9%d9%84%d8%a7%d9%85%db%8c/"><img
-                                                    src="https://emamat.org/wp-content/uploads/2021/05/محمدتقی-سبحانی-1-220x160.jpg"
-                                                    alt="نشست علمی آموزه علم امام در میراث کلامی و حدیثی شیعه برگزار شد"></a>
-                                            <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3
-                                                ماه قبل
-                                            </div>
-                                            <div class="hoov"></div>
-                                        </div>
-                                        <div class="det">
-                                            <div class="met">
-                                            </div>
-                                            <h2>
-                                                <a href="https://emamat.org/%d9%86%d8%b4%d8%b3%d8%aa-%d8%b9%d9%84%d9%85%db%8c-%d8%a2%d9%85%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85-%d8%a7%d9%85%d8%a7%d9%85-%d8%af%d8%b1-%d9%85%db%8c%d8%b1%d8%a7%d8%ab-%da%a9%d9%84%d8%a7%d9%85%db%8c/"
-                                                   title="نشست علمی آموزه علم امام در میراث کلامی و حدیثی شیعه برگزار شد">نشست
-                                                    علمی آموزه علم امام در میراث کلامی و حدیثی شیعه برگزار شد</a>
-                                            </h2>
-                                            <p>حجت‌الاسلام والمسلمین محمدصفر جبرئیلی، عضو هیأت علمی گروه کلام
-                                                پژوهشگاه علوم و فرهنگ اسلامی در این نشست، اظهار داشت: علم امام از
-                                                مسائل بسیار مهمی است که به راحتی قابل حل شدن نیست. علم امام در تاریخ
-                                                کلام امامیه همواره مطرح بوده است و کمتر کتابی در تاریخ تشیع می توان
-                                                یافت که درباره علم امام مباحثی مطرح نکرده باشند. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                                </section>
+                            {% endfor %}
                         </ul>
                     </div>
-
                     <div id="item-2" class="tabcontent">
                         <ul class="item-2">
                             <section class="apnews ne_three">
@@ -422,7 +291,6 @@
                             </section>
                         </ul>
                     </div>
-
                     <div id="item-3" class="tabcontent">
                         <ul class="item-3">
                             <section class="apnews ne_three">
@@ -561,14 +429,10 @@
                             </section>
                         </ul>
                     </div>
-
-
                     <div id="item-4" class="tabcontent">
                         <ul class="item-4">
                         </ul>
                     </div>
-
-
                     <div id="item-5" class="tabcontent">
                         <ul class="item-5">
                             <section class="apnews ne_three">
@@ -667,14 +531,10 @@
                             </section>
                         </ul>
                     </div>
-
-
                     <div id="item-6" class="tabcontent">
                         <ul class="item-6">
                         </ul>
                     </div>
-
-
                 </div>
             </div>
             <script>

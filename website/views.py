@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from blog.models import Post
 from django.http import HttpResponse, JsonResponse
 
 
 def index_view(request):
-    return render(request, '../templates/website/index.html')
+    posts = Post.objects.filter(status=1)
+    context = {'posts': posts}
+    return render(request, '../templates/website/index.html', context)
 
 
 def about_view(request):
