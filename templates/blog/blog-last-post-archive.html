@@ -1,0 +1,35 @@
+{% load static %}
+<div class="sidebar-box">
+    <div class="sidebar-header"><h4>آخرین نوشته ها</h4><b></b></div>
+    <div class="sidebar-content">
+        <div class="post-wrap">
+            <div class="widget wid-editors">
+                <div class="list">
+                    {% for post in posts %}
+                    <div class="item clearfix">
+                        <div class="icon">
+                            <li class=""></li>
+                        </div>
+                        <div class="thumbnail">
+                            <a href="{% url 'blog:blog-single' pid=post.id %}">
+                                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                            </a>
+                        </div>
+                        <div class="det">
+                            <div class="au_name">
+                                {% for cat in post.category.all %}
+                                    {{ cat.name }}{% if not forloop.last %} - {% endif %}
+                                 {% endfor %}
+                            </div>
+                            <h2>
+                                <a href="{% url 'blog:blog-single' pid=post.id %}"
+                                   title="{{ post.title }}">{{ post.title }}</a>
+                            </h2>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
