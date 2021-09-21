@@ -1,0 +1,5 @@
+{% load static %}
+{% for post in posts %}
+    <img src="{% static 'img/star.png' %}">
+    <span><a href="{% url 'blog:blog-single' pid=post.id %}" title="{{ post.title }}">{{ post.title }}</a></span>
+{% endfor %}

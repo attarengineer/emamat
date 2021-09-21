@@ -20,17 +20,21 @@
                                                 <a href="{% url 'blog:blog-single' pid=post.id %}">
                                                     <img src="{{ post.image.url }}" alt="{{ post.title }}">
                                                 </a>
-                                                <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3
-                                                    ماه
-                                                    قبل
+                                                <div class="dated"><i class="fa fa-clock-o"
+                                                                      aria-hidden="true"></i>{{ post.published_date|date:"H:i - Y/m/d" }}
                                                 </div>
-                                                <div style="width: 40px; height: 50px;" class="letep"><b style="margin: 0; background: #333;padding: 0;text-align: center;">بازدید </b><span>{{ post.counter_views }}</span></div>
+                                                <div style="width: 40px; height: 50px;" class="letep">
+                                                    <b style="margin: 0; background: #333;padding: 0;text-align: center;">بازدید </b>
+                                                    <span style="background-color: #008000;">{{ post.counter_views }}</span>
+                                                </div>
                                                 <div class="hoov"></div>
                                             </div>
                                             <div class="det">
                                                 <div class="met">
                                                 </div>
-                                                <h2><a href="{% url 'blog:blog-single' pid=post.id %}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                                                <h2><a href="{% url 'blog:blog-single' pid=post.id %}"
+                                                       title="{{ post.title }}">{{ post.title }}</a>
+                                                </h2>
                                                 <p>{{ post.content|truncatechars:300 }}</p>
                                             </div>
                                         </div>
@@ -43,9 +47,10 @@
             </div>
             <div class="co-aside sidebar"
                  style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
-
                 <div class="theiaStickySidebar"
                      style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+                    {% postcatgories %}
+                    {% lastpost_archive 5 %}
                     <div class="sidebar-box">
                         <div class="sidebar-header"><h4>آموزش</h4><b></b></div>
                         <div class="sidebar-content">
@@ -155,10 +160,7 @@
                                 </div>
                             </div>
                         </div>
-
-
                         <i class="fa fa-chevron-left button-next slick-arrow" style="display: flex;"></i></div>
-                    {% lastpost_archive 5 %}
                 </div>
             </div>
         </div><!----------container--------->

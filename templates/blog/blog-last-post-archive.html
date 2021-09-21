@@ -16,9 +16,9 @@
                             </a>
                         </div>
                         <div class="det">
-                            <div class="au_name">
+                            <div class="categorie">
                                 {% for cat in post.category.all %}
-                                    {{ cat.name }}{% if not forloop.last %} - {% endif %}
+                                    <a class="" href="{% url 'blog:category' cat_name=cat.name %}">{{ cat.name }}</a>{% if not forloop.last %} - {% endif %}
                                  {% endfor %}
                             </div>
                             <h2>

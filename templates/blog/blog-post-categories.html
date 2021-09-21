@@ -1,0 +1,26 @@
+{% load static %}
+<div class="sidebar-box">
+    <div class="sidebar-header"><h4>دسته بندی</h4><b></b></div>
+    <div class="sidebar-content">
+        <div class="post-wrap">
+            <div class="widget wid-editors">
+                <div class="list">
+                    {% for name,count in categories.items %}
+                    <div class="item clearfix">
+                        <div class="det">
+                            <a href="{% url 'blog:category' cat_name=name %}">
+                                {{ name }}
+                            </a>
+                        </div>
+                        <div class="det">
+                            <h2>
+                                <a href="#" title="">تعداد: {{ count }}</a>
+                            </h2>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

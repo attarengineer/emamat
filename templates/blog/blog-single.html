@@ -38,7 +38,7 @@
                                 <div class="categorie">
                                 دسته بندی :
                                 {% for cat in post.category.all %}
-                                    <a href="#"> <span>{{ cat.name }}</span></a>{% if not forloop.last %} - {% endif %}
+                                    <a href="{% url 'blog:category' cat_name=cat.name %}"> <span>{{ cat.name }}</span></a>{% if not forloop.last %} - {% endif %}
                                  {% endfor %}
                                 </div>
                                 <div class="tttl"><h1><a href="">{{ post.title }}</a></h1></div>

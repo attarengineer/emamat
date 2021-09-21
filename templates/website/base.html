@@ -1,4 +1,5 @@
 {% load static %}
+{% load blog_tags %}
 <!DOCTYPE html>
 <html dir="rtl" lang="fa-IR" dir="rtl">
 <head>
@@ -211,22 +212,7 @@
             <div class="mframe">
                 <div class="marquee-frame" data-direction="right" dir="ltr">
                     <p>
-                        <img src="http://emamat.org/wp-content/themes/zohour/img/favicon.png">
-                        <span><a href="" title="ثبت نام سطح ۴ امام شناسی">ثبت نام سطح ۴ امام شناسی</a></span>
-                        <img src="http://emamat.org/wp-content/themes/zohour/img/favicon.png">
-                        <span><a href="" title="امامت گرایش امامت تطبیقی (سطح۴ حوزه علمیه)">امامت گرایش امامت تطبیقی (سطح۴ حوزه علمیه)</a></span>
-                        <img src="http://emamat.org/wp-content/themes/zohour/img/favicon.png">
-                        <span><a href="" title="امامت گرایش امام شناسی (سطح۴ حوزه علمیه)">امامت گرایش امام شناسی (سطح۴ حوزه علمیه)</a></span>
-                        <img src="http://emamat.org/wp-content/themes/zohour/img/favicon.png">
-                        <span><a href="" title="رشته امامت (سطح ۳ حوزه علمیه)">رشته امامت (سطح ۳ حوزه علمیه)</a></span>
-                        <img src="http://emamat.org/wp-content/themes/zohour/img/favicon.png">
-                        <span><a href="" title="نشست علمی آموزه علم امام در میراث کلامی و حدیثی شیعه برگزار شد">نشست علمی آموزه علم امام در میراث کلامی و حدیثی شیعه برگزار شد</a></span>
-                        <img src="http://emamat.org/wp-content/themes/zohour/img/favicon.png">
-                        <span><a href="" title="دوره ی شکل گیری تشیع دوازده امامی؛ واکاوی نقدها و ابهام ها">دوره ی شکل گیری تشیع دوازده امامی؛ واکاوی نقدها و ابهام ها</a></span>
-                        <img src="http://emamat.org/wp-content/themes/zohour/img/favicon.png">
-                        <span><a href="" title="حدیث «سیدا شباب أهل الجنه» و مسأله افضلیّت امام">حدیث «سیدا شباب أهل الجنه» و مسأله افضلیّت امام</a></span>
-                        <img src="http://emamat.org/wp-content/themes/zohour/img/favicon.png">
-                        <span><a href="" title="درآمدی بر تاریخ کلام امامیه در حلب">درآمدی بر تاریخ کلام امامیه در حلب</a></span>
+                        {% filter_post_header 5 %}
                     </p>
                 </div>
             </div>
