@@ -18,3 +18,7 @@ def blog_single_view(request, pid):
     return render(request, 'blog/blog-single.html', context)
 
 
+def blog_search(request):
+    posts = Post.objects.filter(status=1)
+    context = {'posts': posts}
+    return render(request, 'blog/blog-archive.html', context)
