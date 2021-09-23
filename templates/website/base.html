@@ -373,7 +373,7 @@
     <div class="centered">
         <div id='search-box'>
             <i id="close-btn" class="fa fa-times"></i>
-            <form method="get" action="https://emamat.org" id="search-form">
+            <form method="get" action="{% url 'blog:search' %}" id="search-form">
                 <input id='search-text' name='s' placeholder='کلمه مورد نظر خود را بنویسید ...' type='text'/>
                 <button id='search-button' type='submit'>
                     <span>جستجو</span>
