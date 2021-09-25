@@ -10,7 +10,7 @@ class Contact(models.Model):
     update_date = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['created_date']
+        ordering = ['-created_date']
 
     def __str__(self):
         return self.name

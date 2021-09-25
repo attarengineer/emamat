@@ -1,28 +1,32 @@
 from django.shortcuts import render, get_object_or_404
 from blog.models import Post
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from website.forms import ContactForm
+from django.contrib import messages
 
 
 def index_view(request):
     posts = Post.objects.filter(status=1)
     context = {'posts': posts}
-    return render(request, '../templates/website/index.html', context)
+    return render(request, 'website/index.html', context)
 
 
 def about_view(request):
-    return render(request, '../templates/website/about.html')
+    return render(request, 'website/about.html')
 
 
 def contact_view(request):
-    return render(request, '../templates/website/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'پیام شما با موفقیت ارسال شد.')
+        else:
+            messages.add_message(request, messages.ERROR, 'ارسال پیام با خطا مواجه شد.')
+    form = ContactForm()
+    return render(request, 'website/contact.html', {'form': form})
 
 
-def http_test(request):
-    return HttpResponse('<h1>salam bacheha</h1>')
-
-
-def json_test(request):
-    return JsonResponse({'name': 'alireza'})
 
 
 

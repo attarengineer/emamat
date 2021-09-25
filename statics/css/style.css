@@ -8562,3 +8562,17 @@ div.tab-post strong.active, .timeline .polist .info-txt .info-txt-icon {
 #area-books li a {
     color: #444444 !important;
 }
+
+.alert-success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
+.alert {
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
