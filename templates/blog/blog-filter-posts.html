@@ -1,4 +1,5 @@
 {% load static %}
+{#{% load humanize %}#}
 {% for post in posts %}
     <section class="apnews ne_three">
         <div class="polist clearfix">
@@ -7,7 +8,8 @@
                     <a href="{% url 'blog:blog-single' pid=post.id %}">
                         <img src="{{ post.image.url }}" alt="{{ post.title }}">
                     </a>
-                    <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i>{{ post.published_date|date:"H:i - Y/m/d" }}</div>
+                    <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.published_date|date:"H:i - Y/m/d" }}</div>
+{#                    <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.published_date|naturaltime }}</div>#}
                     <div style="width: 40px; height: 50px;" class="letep">
                         <b style="margin: 0; background: #333;padding: 0;text-align: center;">بازدید </b>
                         <span style="background-color: #008000;">{{ post.counter_views }}</span>

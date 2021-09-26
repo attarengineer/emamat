@@ -39,7 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
     'blog.apps.BlogConfig',
+    'django.contrib.humanize',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'robots',
 ]
+
+SITE_ID = 2
+
+# robots
+ROBOTS_USE_SITEMAP = True
+ROBOTS_USE_HOST = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
