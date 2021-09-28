@@ -35,7 +35,7 @@
                                                 <h2><a href="{% url 'blog:blog-single' pid=post.id %}"
                                                        title="{{ post.title }}">{{ post.title }}</a>
                                                 </h2>
-                                                <p>{{ post.content|truncatechars:300 }}</p>
+                                                <p>{{ post.content|truncatechars:300|safe }}</p>
                                             </div>
                                         </div>
                                     </div>
