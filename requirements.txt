@@ -6,3 +6,4 @@ Pillow
 django-robots
 django-summernote
 django-debug-toolbar
+six

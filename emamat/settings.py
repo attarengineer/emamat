@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
 ]
 
-SITE_ID = 2
+SITE_ID = 3
 
 # robots
 ROBOTS_USE_SITEMAP = True
