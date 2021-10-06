@@ -27,6 +27,7 @@ def contact_view(request):
     return render(request, 'website/contact.html', {'form': form})
 
 
-
+def links_view(request):
+    return render(request, 'website/links.html')
 
 

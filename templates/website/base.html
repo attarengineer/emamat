@@ -35,10 +35,10 @@
                                         href="{% url 'website:contact' %}">تماس با ما</a></li>
                                 <li id="menu-item-27"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a
-                                        href="http://#">اساتید</a></li>
-                                <li id="menu-item-28"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a
-                                        href="http://#">دانشجویان</a></li>
+                                        href="{% url 'website:links' %}">پیوندها</a></li>
+{#                                <li id="menu-item-28"#}
+{#                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a#}
+{#                                        href="http://#">دانشجویان</a></li>#}
                             </ul>
                         </div>
                     </div>
@@ -50,61 +50,61 @@
                                 <ul id="menu-%d9%85%d9%86%d9%88%db%8c-%d8%a7%d8%b5%d9%84%db%8c" class="nav-menu">
                                     <li id="menu-item-386"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-386">
-                                        <a href="{% url 'website:index' %}">صفحه نخست</a>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-543"
-                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-543">
-                                                <a href="https://emamat.org/register/">ثبت نام سطح ۴ امام شناسی</a>
-                                                <ul class="sub-menu">
-                                                    <li id="menu-item-544"
-                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-544">
-                                                        <a href="https://emamat.org/contact/">تماس با ما</a></li>
-                                                </ul>
-                                            </li>
-                                            <li id="menu-item-545"
-                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-545">
-                                                <a href="https://emamat.org/linkha/">پیوندهای سایت</a></li>
-                                            <li id="menu-item-546"
-                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-546">
-                                                <a href="https://emamat.org/index/">صفحه نخست</a>
-                                                <ul class="sub-menu">
-                                                    <li id="menu-item-547"
-                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-547">
-                                                        <a href="https://emamat.org/pag-small/">برگه دو ستونه</a></li>
-                                                    <li id="menu-item-548"
-                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-548">
-                                                        <a href="https://emamat.org/page-big/">برگه تمام عرض</a></li>
-                                                    <li id="menu-item-549"
-                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-549">
-                                                        <a href="https://emamat.org/page-search/">جستجوی پیشرفته</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li id="menu-item-550"
-                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550">
-                                                <a href="https://emamat.org/برگه-نمونه/">برگه نمونه</a></li>
-                                        </ul>
+                                        <a href="{% url 'website:index' %}"><i id="search-btn" class="fa fa-home"></i></a>
+{#                                        <ul class="sub-menu">#}
+{#                                            <li id="menu-item-543"#}
+{#                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-543">#}
+{#                                                <a href="https://emamat.org/register/">ثبت نام سطح ۴ امام شناسی</a>#}
+{#                                                <ul class="sub-menu">#}
+{#                                                    <li id="menu-item-544"#}
+{#                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-544">#}
+{#                                                        <a href="https://emamat.org/contact/">تماس با ما</a></li>#}
+{#                                                </ul>#}
+{#                                            </li>#}
+{#                                            <li id="menu-item-545"#}
+{#                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-545">#}
+{#                                                <a href="https://emamat.org/linkha/">پیوندهای سایت</a></li>#}
+{#                                            <li id="menu-item-546"#}
+{#                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-546">#}
+{#                                                <a href="https://emamat.org/index/">صفحه نخست</a>#}
+{#                                                <ul class="sub-menu">#}
+{#                                                    <li id="menu-item-547"#}
+{#                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-547">#}
+{#                                                        <a href="https://emamat.org/pag-small/">برگه دو ستونه</a></li>#}
+{#                                                    <li id="menu-item-548"#}
+{#                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-548">#}
+{#                                                        <a href="https://emamat.org/page-big/">برگه تمام عرض</a></li>#}
+{#                                                    <li id="menu-item-549"#}
+{#                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-549">#}
+{#                                                        <a href="https://emamat.org/page-search/">جستجوی پیشرفته</a>#}
+{#                                                    </li>#}
+{#                                                </ul>#}
+{#                                            </li>#}
+{#                                            <li id="menu-item-550"#}
+{#                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550">#}
+{#                                                <a href="https://emamat.org/برگه-نمونه/">برگه نمونه</a></li>#}
+{#                                        </ul>#}
                                     </li>
                                     <li id="menu-item-532"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-532">
                                         <a href="{% url 'blog:blog-archive' %}">اخبار</a></li>
-                                    <li id="menu-item-504"
-                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-504">
-                                        <a href="https://emamat.org/category/zohour-news/education/">آموزش</a></li>
-                                    <li id="menu-item-344"
-                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-344">
-                                        <a href="https://emamat.org/category/zohour-news/research/">پژوهش</a></li>
-                                    <li id="menu-item-345"
-                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-345">
-                                        <a href="https://emamat.org/category/zohour-news/cultural/">تهذیب</a></li>
-                                    <li id="menu-item-392"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-392">
-                                        <a href="https://emamat.org/contact/">تماس با ما</a></li>
+{#                                    <li id="menu-item-504"#}
+{#                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-504">#}
+{#                                        <a href="https://emamat.org/category/zohour-news/education/">آموزش</a></li>#}
+{#                                    <li id="menu-item-344"#}
+{#                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-344">#}
+{#                                        <a href="https://emamat.org/category/zohour-news/research/">پژوهش</a></li>#}
+{#                                    <li id="menu-item-345"#}
+{#                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-345">#}
+{#                                        <a href="https://emamat.org/category/zohour-news/cultural/">تهذیب</a></li>#}
+{#                                    <li id="menu-item-392"#}
+{#                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-392">#}
+{#                                        <a href="https://emamat.org/contact/">تماس با ما</a></li>#}
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="mapp"><a onclick="myFunction()" class="dropbtn"> اخبار استانها</a></div>
+{#                    <div class="mapp"><a onclick="myFunction()" class="dropbtn"> اخبار استانها</a></div>#}
                     <div class="ap-search">
                         <div class="bars"><span></span><span></span><span></span></div>
                         <a class="toggle" href="#toggle" onclick="openNav()"><span class="icon-reorder"></span></a><i
@@ -193,15 +193,15 @@
                 </div>
             </div>
             <ul id="leftmenu">
-                <li class="menu1"><a href="https://emamat.org" class="home" target="_blank"> <span>صفحه نخست</span></a>
+                <li class="menu1"><a href="{% url 'website:index' %}" class="home" target="_blank"> <span>صفحه نخست</span></a>
                 </li>
-                <li class="menu2"><a href="" class="about" target="_blank"><span>تالار گفتمان</span></a></li>
-                <li class="menu3"><a href="" class="about" target="_blank"><span>اپلیکیشن سایت</span></a></li>
-                <li class="menu4"><a href="" class="services" target="_blank"> <span>سروش</span></a></li>
-                <li class="menu5"><a href="" class="services" target="_blank"> <span>ایتا</span></a></li>
-                <li class="menu6"><a href="" class="about" target="_blank"><span>آپارات</span></a></li>
-                <li class="menu7"><a href="" class="home" target="_blank"> <span>اینستاگرام</span></a></li>
-                <li class="menu8"><a href="" class="services" target="_blank"> <span>اطلاعات سایت</span></a></li>
+                <li class="menu2"><a href="{% url 'website:about' %}" class="about" target="_blank"><span>درباره ما</span></a></li>
+                <li class="menu2"><a href="{% url 'website:contact' %}" class="about" target="_blank"><span>ارتباط با ما</span></a></li>
+{#                <li class="menu4"><a href="" class="services" target="_blank"> <span>سروش</span></a></li>#}
+{#                <li class="menu5"><a href="" class="services" target="_blank"> <span>ایتا</span></a></li>#}
+{#                <li class="menu6"><a href="" class="about" target="_blank"><span>آپارات</span></a></li>#}
+{#                <li class="menu7"><a href="" class="home" target="_blank"> <span>اینستاگرام</span></a></li>#}
+                <li class="menu8"><a href="{% url 'website:links' %}" class="services" target="_blank"> <span>پیوندها</span></a></li>
                 <li class="go-top"><a href="#"><i class="fa fa-arrow-up"></i><span>برو بالا</span></a></li>
             </ul>
         </div>

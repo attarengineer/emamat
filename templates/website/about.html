@@ -1,17 +1,18 @@
+{% extends 'website/base.html' %}
 {% load static %}
-<script type='text/javascript' src='{% static 'js/jquery.min.js' %}'></script>
-<script type='text/javascript' src='{% static 'js/marquee.min.js' %}'></script>
-<div class="marquee">jQuery marquee is the best <b>marquee</b> plugin in the world</div>
-<style>
-.marquee {
-  width: 300px;
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background: #ccc;
-}
-</style>
-<script>
-$(document).ready(function () {
-    $('.marquee').marquee({duration:10000,pauseOnHover:true});
-});
-</script>
+{% block content %}
+    <section class="ap_main" style="margin-top:30px;">
+        <div class="container inn">
+            <div class="ap-single">
+                <section class="article clearfix">
+                    <div id="entry">
+                        <div class="entry">
+                            <h3>درباره ما</h3>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div><!----------container--------->
+    </section>
+{% endblock %}
