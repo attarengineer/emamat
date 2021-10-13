@@ -37,3 +37,15 @@ def postcatgories():
     for name in categories:
         cat_dict[name] = posts.filter(category=name).count()
     return {'categories': cat_dict}
+
+
+@register.inclusion_tag('blog/blog-slider.html')
+def slider(arg=5, cat=3):
+    posts = Post.objects.filter(status=1, category=cat).order_by('-published_date')[:arg]
+    return {'posts': posts}
+
+
+@register.inclusion_tag('blog/blog-new.html')
+def latest_news(arg=20):
+    posts = Post.objects.filter(status=1).order_by('-published_date')[:arg]
+    return {'posts': posts}

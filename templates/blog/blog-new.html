@@ -1,0 +1,20 @@
+{% load static %}
+<div class="co-aside sidebar">
+    <section class="timeline">
+        <div class="widget-title"><h4>جدیدترین ها</h4></div>
+        <div class="polist">
+            {% for post in posts %}
+                <div class="info-txt">
+                    <div class="info-txt-titre">
+                        <h2>
+                            <a href="{% url 'blog:blog-single' pid=post.id %}" title="{{ post.title }}">{{ post.title }}</a>
+                        </h2>
+                    </div>
+                    <div class="info-txt-icon">
+                        <span>{{ post.published_date|date:"H:i" }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>

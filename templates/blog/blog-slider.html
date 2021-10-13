@@ -1,0 +1,22 @@
+{% load static %}
+<div class="ap_news">
+    <div id="m" class="ap_slider">
+        {% for post in posts %}
+            <div class="item clearfix">
+                <div class="thumbnail">
+                    <a href="{% url 'blog:blog-single' pid=post.id %}">
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}"></a>
+                </div>
+                <div class="det">
+                    <div class="met">
+                        <span class="dat"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.published_date|date:"H:i - Y/m/d" }}</span>
+                    </div>
+                    <h2><a href="{% url 'blog:blog-single' pid=post.id %}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                    <p>
+                    <p>{{ post.content|truncatechars:300 }}</p>
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
