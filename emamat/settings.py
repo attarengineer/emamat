@@ -154,3 +154,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+# google recaptcha
+GOOGLE_RECAPTCHA_SITE_KEY = '6Ldmr_UcAAAAAIZTF4u1oTWQqkoq-Dzgfx-1pdaS'
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Ldmr_UcAAAAAOZl2DAayj6HGgx1m7qRb0EFU2aM'

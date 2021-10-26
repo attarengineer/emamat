@@ -3,6 +3,7 @@ from blog.models import Post
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from website.forms import ContactForm
 from django.contrib import messages
+from django.conf import settings
 
 
 def index_view(request):
@@ -16,6 +17,7 @@ def about_view(request):
 
 
 def contact_view(request):
+    site_key = settings.GOOGLE_RECAPTCHA_SITE_KEY
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -24,7 +26,7 @@ def contact_view(request):
         else:
             messages.add_message(request, messages.ERROR, 'ارسال پیام با خطا مواجه شد.')
     form = ContactForm()
-    return render(request, 'website/contact.html', {'form': form})
+    return render(request, 'website/contact.html', {'form': form, 'site_key': site_key})
 
 
 def links_view(request):
