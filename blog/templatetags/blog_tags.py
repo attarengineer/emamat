@@ -49,3 +49,21 @@ def slider(arg=5, cat=3):
 def latest_news(arg=20):
     posts = Post.objects.filter(status=1).order_by('-published_date')[:arg]
     return {'posts': posts}
+
+
+@register.inclusion_tag('blog/blog-sidebar-box-top.html')
+def sidebar_box_top(arg=1, cat=3):
+    posts = Post.objects.filter(status=1, category=cat).order_by('-published_date')[:arg]
+    return {'posts': posts}
+
+
+@register.inclusion_tag('blog/blog-sidebar-box-down.html')
+def sidebar_box_down(arg=3, cat=3):
+    posts = Post.objects.filter(status=1, category=cat).order_by('-published_date')[1:arg]
+    return {'posts': posts}
+
+
+@register.inclusion_tag('blog/blog-sidebar-slider.html')
+def sidebar_slider(arg=3, cat=3):
+    posts = Post.objects.filter(status=1, category=cat).order_by('-published_date')[:arg]
+    return {'posts': posts}
