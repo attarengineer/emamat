@@ -1,0 +1,8 @@
+{% load static %}
+{% for post in posts %}
+    <div class="item clearfix">
+        <div class="tit">
+            <h2><a href="{% url 'blog:blog-single' pid=post.id %}" title="{{ post.title }}">{{ post.title }}</a></h2>
+        </div>
+    </div>
+{% endfor %}
