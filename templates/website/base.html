@@ -1,5 +1,6 @@
 {% load static %}
 {% load blog_tags %}
+{% load jalali_tags %}
 <!DOCTYPE html>
 <html dir="rtl" lang="fa-IR" dir="rtl">
 <head>
@@ -11,8 +12,9 @@
     <link rel="shortcut icon" href="{% static 'img/favicon.png' %}"/>
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
     <link rel='stylesheet' id='ap-slick-css' href='{% static 'css/slick.css' %}' type='text/css' media='all'/>
+    <link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
 </head>
-<body>
+<body onload="startTime()">
 <div class="ap">
     <div class="big_header">
         <div class="ap_header">
@@ -36,9 +38,9 @@
                                 <li id="menu-item-27"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a
                                         href="{% url 'website:links' %}">پیوندها</a></li>
-{#                                <li id="menu-item-28"#}
-{#                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a#}
-{#                                        href="http://#">دانشجویان</a></li>#}
+                                {#                                <li id="menu-item-28"#}
+                                {#                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a#}
+                                {#                                        href="http://#">دانشجویان</a></li>#}
                             </ul>
                         </div>
                     </div>
@@ -48,64 +50,65 @@
                         <div class="menu">
                             <div class="menu-%d9%85%d9%86%d9%88%db%8c-%d8%a7%d8%b5%d9%84%db%8c-container">
                                 <ul id="menu-%d9%85%d9%86%d9%88%db%8c-%d8%a7%d8%b5%d9%84%db%8c" class="nav-menu">
-                                    <li id="menu-item-386" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-386">
+                                    <li id="menu-item-386"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-386">
                                         <a href="{% url 'website:index' %}">
                                             <i class="fa fa-home"></i>
                                         </a>
-{#                                        <ul class="sub-menu">#}
-{#                                            <li id="menu-item-543"#}
-{#                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-543">#}
-{#                                                <a href="">ثبت نام سطح ۴ امام شناسی</a>#}
-{#                                                <ul class="sub-menu">#}
-{#                                                    <li id="menu-item-544"#}
-{#                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-544">#}
-{#                                                        <a href="">تماس با ما</a></li>#}
-{#                                                </ul>#}
-{#                                            </li>#}
-{#                                            <li id="menu-item-545"#}
-{#                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-545">#}
-{#                                                <a href="">پیوندهای سایت</a></li>#}
-{#                                            <li id="menu-item-546"#}
-{#                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-546">#}
-{#                                                <a href="">صفحه نخست</a>#}
-{#                                                <ul class="sub-menu">#}
-{#                                                    <li id="menu-item-547"#}
-{#                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-547">#}
-{#                                                        <a href="">برگه دو ستونه</a></li>#}
-{#                                                    <li id="menu-item-548"#}
-{#                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-548">#}
-{#                                                        <a href="">برگه تمام عرض</a></li>#}
-{#                                                    <li id="menu-item-549"#}
-{#                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-549">#}
-{#                                                        <a href="">جستجوی پیشرفته</a>#}
-{#                                                    </li>#}
-{#                                                </ul>#}
-{#                                            </li>#}
-{#                                            <li id="menu-item-550"#}
-{#                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550">#}
-{#                                                <a href=""></a></li>#}
-{#                                        </ul>#}
+                                        {#                                        <ul class="sub-menu">#}
+                                        {#                                            <li id="menu-item-543"#}
+                                        {#                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-543">#}
+                                        {#                                                <a href="">ثبت نام سطح ۴ امام شناسی</a>#}
+                                        {#                                                <ul class="sub-menu">#}
+                                        {#                                                    <li id="menu-item-544"#}
+                                        {#                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-544">#}
+                                        {#                                                        <a href="">تماس با ما</a></li>#}
+                                        {#                                                </ul>#}
+                                        {#                                            </li>#}
+                                        {#                                            <li id="menu-item-545"#}
+                                        {#                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-545">#}
+                                        {#                                                <a href="">پیوندهای سایت</a></li>#}
+                                        {#                                            <li id="menu-item-546"#}
+                                        {#                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-546">#}
+                                        {#                                                <a href="">صفحه نخست</a>#}
+                                        {#                                                <ul class="sub-menu">#}
+                                        {#                                                    <li id="menu-item-547"#}
+                                        {#                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-547">#}
+                                        {#                                                        <a href="">برگه دو ستونه</a></li>#}
+                                        {#                                                    <li id="menu-item-548"#}
+                                        {#                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-548">#}
+                                        {#                                                        <a href="">برگه تمام عرض</a></li>#}
+                                        {#                                                    <li id="menu-item-549"#}
+                                        {#                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-549">#}
+                                        {#                                                        <a href="">جستجوی پیشرفته</a>#}
+                                        {#                                                    </li>#}
+                                        {#                                                </ul>#}
+                                        {#                                            </li>#}
+                                        {#                                            <li id="menu-item-550"#}
+                                        {#                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550">#}
+                                        {#                                                <a href=""></a></li>#}
+                                        {#                                        </ul>#}
                                     </li>
                                     <li id="menu-item-532"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-532">
                                         <a href="{% url 'blog:blog-archive' %}">اخبار</a></li>
-{#                                    <li id="menu-item-504"#}
-{#                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-504">#}
-{#                                        <a href="">آموزش</a></li>#}
-{#                                    <li id="menu-item-344"#}
-{#                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-344">#}
-{#                                        <a href="">پژوهش</a></li>#}
-{#                                    <li id="menu-item-345"#}
-{#                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-345">#}
-{#                                        <a href="">تهذیب</a></li>#}
-{#                                    <li id="menu-item-392"#}
-{#                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-392">#}
-{#                                        <a href="">تماس با ما</a></li>#}
+                                    {#                                    <li id="menu-item-504"#}
+                                    {#                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-504">#}
+                                    {#                                        <a href="">آموزش</a></li>#}
+                                    {#                                    <li id="menu-item-344"#}
+                                    {#                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-344">#}
+                                    {#                                        <a href="">پژوهش</a></li>#}
+                                    {#                                    <li id="menu-item-345"#}
+                                    {#                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-345">#}
+                                    {#                                        <a href="">تهذیب</a></li>#}
+                                    {#                                    <li id="menu-item-392"#}
+                                    {#                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-392">#}
+                                    {#                                        <a href="">تماس با ما</a></li>#}
                                 </ul>
                             </div>
                         </div>
                     </div>
-{#                    <div class="mapp"><a onclick="myFunction()" class="dropbtn"> اخبار استانها</a></div>#}
+                    {#                    <div class="mapp"><a onclick="myFunction()" class="dropbtn"> اخبار استانها</a></div>#}
                     <div class="ap-search">
                         <div class="bars"><span></span><span></span><span></span></div>
                         <a class="toggle" href="#toggle" onclick="openNav()"><span class="icon-reorder"></span></a><i
@@ -194,17 +197,64 @@
                 </div>
             </div>
             <ul id="leftmenu">
-                <li class="menu1"><a href="{% url 'website:index' %}" class="home" target="_blank"> <span>صفحه نخست</span></a>
+                <li class="menu1"><a href="{% url 'website:index' %}" class="home" target="_blank">
+                    <span>صفحه نخست</span></a>
                 </li>
-                <li class="menu2"><a href="{% url 'website:about' %}" class="about" target="_blank"><span>درباره ما</span></a></li>
-                <li class="menu2"><a href="{% url 'website:contact' %}" class="about" target="_blank"><span>ارتباط با ما</span></a></li>
-{#                <li class="menu4"><a href="" class="services" target="_blank"> <span>سروش</span></a></li>#}
-{#                <li class="menu5"><a href="" class="services" target="_blank"> <span>ایتا</span></a></li>#}
-{#                <li class="menu6"><a href="" class="about" target="_blank"><span>آپارات</span></a></li>#}
-{#                <li class="menu7"><a href="" class="home" target="_blank"> <span>اینستاگرام</span></a></li>#}
-                <li class="menu8"><a href="{% url 'website:links' %}" class="services" target="_blank"> <span>پیوندها</span></a></li>
+                <li class="menu2"><a href="{% url 'website:about' %}" class="about"
+                                     target="_blank"><span>درباره ما</span></a></li>
+                <li class="menu2"><a href="{% url 'website:contact' %}" class="about"
+                                     target="_blank"><span>ارتباط با ما</span></a></li>
+                {#                <li class="menu4"><a href="" class="services" target="_blank"> <span>سروش</span></a></li>#}
+                {#                <li class="menu5"><a href="" class="services" target="_blank"> <span>ایتا</span></a></li>#}
+                {#                <li class="menu6"><a href="" class="about" target="_blank"><span>آپارات</span></a></li>#}
+                {#                <li class="menu7"><a href="" class="home" target="_blank"> <span>اینستاگرام</span></a></li>#}
+                <li class="menu8"><a href="{% url 'website:links' %}" class="services" target="_blank">
+                    <span>پیوندها</span></a></li>
                 <li class="go-top"><a href="#"><i class="fa fa-arrow-up"></i><span>برو بالا</span></a></li>
             </ul>
+        </div>
+    </div>
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('clock').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }
+            ;  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+    <div id="mySidenav" class="sidenav">
+        <s></s>
+        <div class="ind-ii">
+            <div class="hadis">
+                <div class="tit522"> حدیث روز</div>
+                <div class="cone96">
+                    <marquee onmouseover="this.stop()" onmouseout="this.start()" direction="right" height="25"
+                             style="direction: rtl; text-align: center;" scrollamount="5" scrolldelay="70">
+                        امام علی (ع) می فرماید : هر کس از خود بدگویی و انتقاد کند٬ خود را اصلاح کرده و هر کس خودستایی
+                        نماید٬ پس به تحقیق خویش را تباه نموده است.
+                    </marquee>
+                </div>
+            </div>
+            <br>
+            <b><i class="fa fa-sun-o" aria-hidden="true"></i> پنج شنبه, ۶ آبان , ۱۴۰۰</b>
+            <b><i class="fa fa-moon-o" aria-hidden="true"></i> 22 ربيع أول 1443</b>
+            <b><i class="fa fa-star" aria-hidden="true"></i>{% now "d-M-Y" %}</b>
+            <b><i class="fa fa-star" aria-hidden="true"></i>{{ request.user.date_joined|to_jalali:'%Y/%m/%d _ %H:%M:%S' }}</b>
+            <b><i class="fa fa-clock-o" aria-hidden="true"></i> ساعت <span id="clock"></span></b>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         </div>
     </div>
     <div class="container">
@@ -333,9 +383,11 @@
     </div>
 </div>
 <script type='text/javascript' src='{% static 'js/jquery.min.js' %}'></script>
+<script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
 <script type='text/javascript' src='{% static 'js/slick.min.js' %}'></script>
 <script type='text/javascript' src='{% static 'js/marquee.min.js' %}'></script>
 <script type='text/javascript' src='{% static 'js/main.js' %}'></script>
+
 <script>$(document).ready(function () {
     $('.ap_news,.co-aside').theiaStickySidebar({additionalMarginTop: 30});
 });

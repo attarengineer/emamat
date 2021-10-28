@@ -73,3 +73,9 @@ def sidebar_slider(arg=3, cat=3):
 def blog_footer(arg=5, cat=3):
     posts = Post.objects.filter(status=1, category=cat).order_by('-published_date')[:arg]
     return {'posts': posts}
+
+
+@register.inclusion_tag('blog/blog-single-similar-post.html')
+def blog_similar_post(arg=4, cat=1):
+    posts = Post.objects.filter(status=1, category=cat).order_by('-published_date')[:arg]
+    return {'posts': posts}

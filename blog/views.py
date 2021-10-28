@@ -25,7 +25,8 @@ def blog_archive_view(request, **kwargs):
 
 def blog_single_view(request, pid):
     post = get_object_or_404(Post, pk=pid, status=1)
-    context = {'post': post}
+    i = 1
+    context = {'post': post, 'i': i}
     return render(request, 'blog/blog-single.html', context)
 
 

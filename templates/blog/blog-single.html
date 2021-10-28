@@ -11,10 +11,11 @@
                 <div class="ap-single">
                     <section class="article clearfix">
                         <div class="iim">
-                            <div class="breadpo"><a href="https://emamat.org" title="امام شناسی">صفحه اصلی </a> » گروه »
-                                <a href="https://emamat.org/category/news/" rel="category tag">اخبار</a> » <a
-                                        href="https://emamat.org/category/%d8%a7%d8%b3%d9%84%d8%a7%db%8c%d8%af%d8%b1/"
-                                        rel="category tag">اسلایدر</a></div>
+                            <div class="breadpo">
+                                <a href="{% url 'website:index' %}" title="امامت">صفحه اصلی </a>»
+                                <a href="{% url 'blog:blog-archive' %}" rel="category tag">اخبار</a> »
+                                {{ post.title }}
+                            </div>
                         </div>
 
                         <div class="imed">
@@ -50,36 +51,36 @@
                         <div class="conteneur_barre_outils">
                             <div class="soc">
                                 <a target="_blank"
-                                   href="http://www.facebook.com/sharer/sharer.php?u=https://emamat.org/%d8%a7%d8%b9%d8%aa%d8%b1%d8%a7%d8%b6-%d8%b9%d9%84%d8%a7%d9%85%d9%87-%d8%b4%d8%b1%d9%81%e2%80%8c%d8%a7%d9%84%d8%af%db%8c%d9%86-%d8%a8%d9%87-%d8%aa%d8%ae%d8%b1%db%8c%d8%a8-%d8%a8%d9%82%d8%a7%d8%b9/"
+                                   href="http://www.facebook.com/sharer/sharer.php?u={% url 'blog:blog-single' pid=post.id %}"
                                    title="اشتراک گذاری در فیسبوک" rel="tooltip" class="fa fa-facebook"></a>
                                 <a target="_blank"
-                                   href="http://twitter.com/home?status=https://emamat.org/%d8%a7%d8%b9%d8%aa%d8%b1%d8%a7%d8%b6-%d8%b9%d9%84%d8%a7%d9%85%d9%87-%d8%b4%d8%b1%d9%81%e2%80%8c%d8%a7%d9%84%d8%af%db%8c%d9%86-%d8%a8%d9%87-%d8%aa%d8%ae%d8%b1%db%8c%d8%a8-%d8%a8%d9%82%d8%a7%d8%b9/"
+                                   href="http://twitter.com/home?status={% url 'blog:blog-single' pid=post.id %}"
                                    title="اشتراک گذاری در تویتر" rel="tooltip" class="fa fa-twitter"></a>
                                 <a target="_blank"
-                                   href="http://plus.google.com/share?url=https://emamat.org/%d8%a7%d8%b9%d8%aa%d8%b1%d8%a7%d8%b6-%d8%b9%d9%84%d8%a7%d9%85%d9%87-%d8%b4%d8%b1%d9%81%e2%80%8c%d8%a7%d9%84%d8%af%db%8c%d9%86-%d8%a8%d9%87-%d8%aa%d8%ae%d8%b1%db%8c%d8%a8-%d8%a8%d9%82%d8%a7%d8%b9/"
+                                   href="http://plus.google.com/share?url={% url 'blog:blog-single' pid=post.id %}"
                                    title="اشتراک گذاری در گوگل پلاس" rel="tooltip" class="fa fa-google-plus"></a>
                                 <a target="_blank"
-                                   href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://emamat.org/%d8%a7%d8%b9%d8%aa%d8%b1%d8%a7%d8%b6-%d8%b9%d9%84%d8%a7%d9%85%d9%87-%d8%b4%d8%b1%d9%81%e2%80%8c%d8%a7%d9%84%d8%af%db%8c%d9%86-%d8%a8%d9%87-%d8%aa%d8%ae%d8%b1%db%8c%d8%a8-%d8%a8%d9%82%d8%a7%d8%b9/"
+                                   href="https://www.linkedin.com/shareArticle?mini=true&amp;url={% url 'blog:blog-single' pid=post.id %}"
                                    title="اشتراک گذاری در لینکداین" rel="tooltip" class="fa fa-linkedin"></a>
                                 <a target="_blank"
-                                   href="https://telegram.me/share/url?url=https://emamat.org/%d8%a7%d8%b9%d8%aa%d8%b1%d8%a7%d8%b6-%d8%b9%d9%84%d8%a7%d9%85%d9%87-%d8%b4%d8%b1%d9%81%e2%80%8c%d8%a7%d9%84%d8%af%db%8c%d9%86-%d8%a8%d9%87-%d8%aa%d8%ae%d8%b1%db%8c%d8%a8-%d8%a8%d9%82%d8%a7%d8%b9/"
+                                   href="https://telegram.me/share/url?url={% url 'blog:blog-single' pid=post.id %}"
                                    title="اشتراک گذاری در تلگرام" rel="tooltip" class="fa fa-paper-plane"></a>
                                 <a target="_blank"
-                                   href="https://whatsapp://send?text=https://emamat.org/%d8%a7%d8%b9%d8%aa%d8%b1%d8%a7%d8%b6-%d8%b9%d9%84%d8%a7%d9%85%d9%87-%d8%b4%d8%b1%d9%81%e2%80%8c%d8%a7%d9%84%d8%af%db%8c%d9%86-%d8%a8%d9%87-%d8%aa%d8%ae%d8%b1%db%8c%d8%a8-%d8%a8%d9%82%d8%a7%d8%b9/"
+                                   href="https://whatsapp://send?text={% url 'blog:blog-single' pid=post.id %}"
                                    title="اشتراک گذاری در واتساپ" rel="tooltip" class="fa fa-whatsapp"></a>
                             </div>
                             <div class="fontsize">
                                 <div class="report">
                                     <div id="permalink">
                                         <button onclick="copyToClipboard('#coop')">کپی</button>
-                                        <div id="coop">https://emamat.org/?p=436</div>
+                                        <div id="coop">{{ request.get_host }}{% url 'blog:blog-single' pid=post.id %}</div>
                                     </div>
                                 </div>
                                 <a rel="nofollow" class="send_file left"
-                                   href="mailto:?subject=Sur%20%D8%A7%D9%85%D8%A7%D9%85%20%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%20%3A%20%D8%A7%D8%B9%D8%AA%D8%B1%D8%A7%D8%B6%20%D8%B9%D9%84%D8%A7%D9%85%D9%87%20%D8%B4%D8%B1%D9%81%E2%80%8C%D8%A7%D9%84%D8%AF%DB%8C%D9%86%20%D8%A8%D9%87%20%D8%AA%D8%AE%D8%B1%DB%8C%D8%A8%20%D8%A8%D9%82%D8%A7%D8%B9%20%D8%A8%D9%82%DB%8C%D8%B9%20%D9%88%20%D8%AA%D9%84%D8%A7%D8%B4%20%D9%87%D8%A7%DB%8C%20%D8%A8%DB%8C%D9%86%E2%80%8C%D8%A7%D9%84%D9%85%D9%84%D9%84%DB%8C&amp;body=I%20recommend%20this%20page%20%3A%20%D8%A7%D8%B9%D8%AA%D8%B1%D8%A7%D8%B6%20%D8%B9%D9%84%D8%A7%D9%85%D9%87%20%D8%B4%D8%B1%D9%81%E2%80%8C%D8%A7%D9%84%D8%AF%DB%8C%D9%86%20%D8%A8%D9%87%20%D8%AA%D8%AE%D8%B1%DB%8C%D8%A8%20%D8%A8%D9%82%D8%A7%D8%B9%20%D8%A8%D9%82%DB%8C%D8%B9%20%D9%88%20%D8%AA%D9%84%D8%A7%D8%B4%20%D9%87%D8%A7%DB%8C%20%D8%A8%DB%8C%D9%86%E2%80%8C%D8%A7%D9%84%D9%85%D9%84%D9%84%DB%8C.%20You%20can%20read%20it%20on%20%3A%20https%3A%2F%2Femamat.org%2F%25d8%25a7%25d8%25b9%25d8%25aa%25d8%25b1%25d8%25a7%25d8%25b6-%25d8%25b9%25d9%2584%25d8%25a7%25d9%2585%25d9%2587-%25d8%25b4%25d8%25b1%25d9%2581%25e2%2580%258c%25d8%25a7%25d9%2584%25d8%25af%25db%258c%25d9%2586-%25d8%25a8%25d9%2587-%25d8%25aa%25d8%25ae%25d8%25b1%25db%258c%25d8%25a8-%25d8%25a8%25d9%2582%25d8%25a7%25d8%25b9%2F"
-                                   title=" : اعتراض علامه شرف‌الدین به تخریب بقاع بقیع و تلاش های بین‌المللی"></a><a
-                                    class="print" href="#"
-                                    onclick="window.open(&quot;https://emamat.org/%d8%a7%d8%b9%d8%aa%d8%b1%d8%a7%d8%b6-%d8%b9%d9%84%d8%a7%d9%85%d9%87-%d8%b4%d8%b1%d9%81%e2%80%8c%d8%a7%d9%84%d8%af%db%8c%d9%86-%d8%a8%d9%87-%d8%aa%d8%ae%d8%b1%db%8c%d8%a8-%d8%a8%d9%82%d8%a7%d8%b9/?print=1&quot;, &quot;printwin&quot;,&quot;left=200,top=200,width=820,height=550,toolbar=1,resizable=0,status=0,scrollbars=1&quot;);"></a>
+                                   href="mailto:?subject={{ post.title }}&amp;body={{ post.title }}.{{ request.get_host }}{% url 'blog:blog-single' pid=post.id %}"
+                                   title="{{ post.title }}">
+                                </a>
+                                <a class="print" href="#" onclick="window.open(&quot;{% url 'blog:blog-single' pid=post.id %}?print=1&quot;, &quot;printwin&quot;,&quot;left=200,top=200,width=820,height=550,toolbar=1,resizable=0,status=0,scrollbars=1&quot;);"></a>
                                 <div class="plustext">پ</div>
                                 <div class="minustext">پ</div>
                             </div>
@@ -106,63 +107,9 @@
                     <div class="title"><h4>نوشته های مشابه</h4><b></b></div>
                     <div class="boxe-c">
                         <div class="bottom">
-                            <div class="bot">
-                                <div class="thumbnail">
-                                    <a href="https://emamat.org/register/"><img
-                                            src="https://emamat.org/wp-content/uploads/2021/06/امام-شناسی-220x160.jpg"
-                                            alt="ثبت نام سطح ۴ امام شناسی"></a>
-                                    <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 ماه قبل</div>
-                                    <div class="hoov"></div>
-                                </div>
-                                <div class="det">
-                                    <h2><a href="https://emamat.org/register/" title="ثبت نام سطح ۴ امام شناسی">ثبت نام
-                                        سطح ۴ امام شناسی</a></h2>
-                                </div>
-                            </div>
-                            <div class="bot">
-                                <div class="thumbnail">
-                                    <a href="https://emamat.org/%d8%b1%d8%b4%d8%aa%d9%87-%d8%a7%d9%85%d8%a7%d9%85%d8%aa-%d8%b3%d8%b7%d8%ad-3-%d8%ad%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85%db%8c%d9%87/"><img
-                                            src="https://emamat.org/wp-content/uploads/2021/05/2121-220x160.jpg"
-                                            alt="رشته امامت (سطح ۳ حوزه علمیه)"></a>
-                                    <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 ماه قبل</div>
-                                    <div class="hoov"></div>
-                                </div>
-                                <div class="det">
-                                    <h2>
-                                        <a href="https://emamat.org/%d8%b1%d8%b4%d8%aa%d9%87-%d8%a7%d9%85%d8%a7%d9%85%d8%aa-%d8%b3%d8%b7%d8%ad-3-%d8%ad%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85%db%8c%d9%87/"
-                                           title="رشته امامت (سطح ۳ حوزه علمیه)">رشته امامت (سطح ۳ حوزه علمیه)</a></h2>
-                                </div>
-                            </div>
-                            <div class="bot">
-                                <div class="thumbnail">
-                                    <a href="https://emamat.org/%d9%86%d8%b4%d8%b3%d8%aa-%d8%b9%d9%84%d9%85%db%8c-%d8%a2%d9%85%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85-%d8%a7%d9%85%d8%a7%d9%85-%d8%af%d8%b1-%d9%85%db%8c%d8%b1%d8%a7%d8%ab-%da%a9%d9%84%d8%a7%d9%85%db%8c/"><img
-                                            src="https://emamat.org/wp-content/uploads/2021/05/محمدتقی-سبحانی-1-220x160.jpg"
-                                            alt="نشست علمی آموزه علم امام در میراث کلامی و حدیثی شیعه برگزار شد"></a>
-                                    <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 ماه قبل</div>
-                                    <div class="hoov"></div>
-                                </div>
-                                <div class="det">
-                                    <h2>
-                                        <a href="https://emamat.org/%d9%86%d8%b4%d8%b3%d8%aa-%d8%b9%d9%84%d9%85%db%8c-%d8%a2%d9%85%d9%88%d8%b2%d9%87-%d8%b9%d9%84%d9%85-%d8%a7%d9%85%d8%a7%d9%85-%d8%af%d8%b1-%d9%85%db%8c%d8%b1%d8%a7%d8%ab-%da%a9%d9%84%d8%a7%d9%85%db%8c/"
-                                           title="نشست علمی آموزه علم امام در میراث کلامی و حدیثی شیعه برگزار شد">نشست
-                                            علمی آموزه علم امام در میراث کلامی و حدیثی شیعه برگزار شد</a></h2>
-                                </div>
-                            </div>
-                            <div class="bot">
-                                <div class="thumbnail">
-                                    <a href="https://emamat.org/%d8%af%d9%88%d8%b1%d9%87-%db%8c-%d8%b4%da%a9%d9%84-%da%af%db%8c%d8%b1%db%8c-%d8%aa%d8%b4%db%8c%d8%b9-%d8%af%d9%88%d8%a7%d8%b2%d8%af%d9%87-%d8%a7%d9%85%d8%a7%d9%85%db%8c%d8%9b-%d9%88%d8%a7%da%a9%d8%a7/"><img
-                                            src="https://emamat.org/wp-content/uploads/2021/05/3d90c75484c681bbf287c383961f88ec_XL-220x160.jpg"
-                                            alt="دوره ی شکل گیری تشیع دوازده امامی؛ واکاوی نقدها و ابهام ها"></a>
-                                    <div class="dated"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 ماه قبل</div>
-                                    <div class="hoov"></div>
-                                </div>
-                                <div class="det">
-                                    <h2>
-                                        <a href="https://emamat.org/%d8%af%d9%88%d8%b1%d9%87-%db%8c-%d8%b4%da%a9%d9%84-%da%af%db%8c%d8%b1%db%8c-%d8%aa%d8%b4%db%8c%d8%b9-%d8%af%d9%88%d8%a7%d8%b2%d8%af%d9%87-%d8%a7%d9%85%d8%a7%d9%85%db%8c%d8%9b-%d9%88%d8%a7%da%a9%d8%a7/"
-                                           title="دوره ی شکل گیری تشیع دوازده امامی؛ واکاوی نقدها و ابهام ها">دوره ی شکل
-                                            گیری تشیع دوازده امامی؛ واکاوی نقدها و ابهام ها</a></h2>
-                                </div>
-                            </div>
+                            {% for cat in post.category.all|slice:":1" %}
+                                {% blog_similar_post 4 cat.id %}
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -187,15 +134,14 @@
                             <div class="clearfix"></div>
                             <div id="cancel-comment-reply">
                                 <small><a rel="nofollow" id="cancel-comment-reply-link"
-                                          href="/%d8%a7%d8%b9%d8%aa%d8%b1%d8%a7%d8%b6-%d8%b9%d9%84%d8%a7%d9%85%d9%87-%d8%b4%d8%b1%d9%81%e2%80%8c%d8%a7%d9%84%d8%af%db%8c%d9%86-%d8%a8%d9%87-%d8%aa%d8%ae%d8%b1%db%8c%d8%a8-%d8%a8%d9%82%d8%a7%d8%b9/#respond"
+                                          href="{% url 'blog:blog-single' pid=post.id %}#respond"
                                           style="display:none;">برای صرف‌نظر کردن از پاسخ‌گویی اینجا را کلیک نمایید.</a></small>
                             </div>
-                            <form action="https://emamat.org/wp-comments-post.php" method="post" id="commentform">
-
-                                <div class="beena_textarea"><textarea name="comment" id="comment" cols="58" rows="10"
-                                                                      tabindex="4" placeholder="متن دیدگاه"></textarea>
+                            <form action="" method="post" id="commentform">
+                                {% csrf_token %}
+                                <div class="beena_textarea">
+                                    <textarea name="comment" id="comment" cols="58" rows="10" tabindex="4" placeholder="متن دیدگاه"></textarea>
                                 </div>
-
                                 <div class="beena_inputs">
                                     <input type="text" name="author" id="author" value="" size="22" tabindex="1"
                                            aria-required="true" placeholder="نام و نام خانوادگی">

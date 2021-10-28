@@ -8,3 +8,4 @@ django-debug-toolbar
 six
 django-taggit==1.4.0
 django-tinymce
+django-jalali-date
