@@ -3,6 +3,8 @@ return false;});$('.minustext').click(function(){if(size>=min){size--;elm.css({'
 return false;});function str_replace(haystack,needle,replacement){var temp=haystack.split(needle);return temp.join(replacement);}
 $(".info-txt").hover(function(){h1=parseInt($(this).find(".info-txt-titre").width());h2=parseInt($(this).find("a").width());rightAnimation=(h1-h2)+45;leftAnimation=(h1-h2)+45;if(rightAnimation<=45){$(this).find(".info-txt-titre").stop().animate({right:rightAnimation},1400);}
 $(".info-txt").stop().animate({opacity:0.4},200);$(this).stop().animate({opacity:1},200);},function(event){var direction;$(this).find(".info-txt-titre").stop().animate({right:"55px"},1400);$(".info-txt").stop().animate({opacity:1},200);});});$(window).scroll(function(){if($(this).scrollTop()>200){$('.go-top').fadeIn(200);}else{$('.go-top').fadeOut(200);}});$('.go-top').click(function(event){event.preventDefault();$('html, body').animate({scrollTop:0},300);})
+
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "300px";
     document.getElementById("main-re").style.marginLeft = "240px";
@@ -11,4 +13,62 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main-re").style.marginLeft = "0";
+}
+
+
+ /*------------ map ------------*/
+$(function() {
+
+    $("#IranMap svg g path").hover(function() {
+        var c = $(this).attr("data-title");
+		$('#IranMap .show-title').hide();
+		$('#IranMap .show-title').html(c);
+		$('#IranMap .show-title').fadeIn(200);
+	},function(){
+		$('#IranMap .show-title').html("").css({
+			display: "none"
+		})
+	});
+
+    $("#IranMap").mousemove(function(d) {
+        var c = 0;
+        var h = 0;
+        if (!d) {
+            var d = window.event
+        }
+        if (d.pageX || d.pageY) {
+            c = d.pageX;
+            h = d.pageY
+        } else {
+            if (d.clientX || d.clientY) {
+                c = d.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+                h = d.clientY + document.body.scrollTop + document.documentElement.scrollTop
+            }
+        }
+        if ($("#IranMap .show-title").html()) {
+            var f = $(this).offset();
+            var b = (c - f.left + 25) + "px";
+            var g = (h - f.top - 5) + "px";
+            $("#IranMap .show-title").css({
+                left: b,
+                top: g
+            })
+        }
+    })
+});
+
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+    }
+  }
 }
