@@ -72,3 +72,35 @@ window.onclick = function(event) {
     }
   }
 }
+
+
+
+$("#IranMap svg g path").click(function () {
+    var c = $(this).attr("data-title");
+    $('#IranMap .show-title').html(c);
+
+    if ($(this).attr("data-active") != "active") {
+        var ajaxUrl = "{% url 'website:index' %}";
+        var cityid;
+        var city = $(this).attr("class");
+
+        cityid = $(this).attr("cityid");
+
+        $(".city-posts .posts").addClass("disable");
+        $(".city-posts .more").addClass("disable");
+        $(".city-posts h2").addClass("disable");
+        $.post(ajaxUrl, {
+            action: "map_post_ajax",
+            ppp: 4,
+            cat: cityid
+        }).success(function (posts) {
+            $(".city-posts .posts").removeClass("disable");
+            $(".city-posts .more").removeClass("disable");
+            $(".city-posts h2").removeClass("disable");
+            $(".city-posts").empty();
+            $(".city-posts").append(posts);
+
+        });
+
+    }
+});
