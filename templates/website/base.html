@@ -114,7 +114,8 @@
                         <a class="toggle" href="#toggle" onclick="openNav()"><span class="icon-reorder"></span></a><i
                             id="search-btn" class="fa fa-search"></i></div>
                 </div>
-            {% blog_map_city %}
+            {{request.POST.cat}}
+            {% blog_map_city 1 1 %}
 
             </div>
             <div id="site-navigation">
