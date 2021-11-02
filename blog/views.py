@@ -7,10 +7,13 @@ def blog_archive_view(request, **kwargs):
     posts = Post.objects.filter(status=1)
     if kwargs.get('cat_name'):
         posts = posts.filter(category__name=kwargs['cat_name'])
+        print(kwargs['cat_name'])
     if kwargs.get('author_username'):
         posts = posts.filter(author__username=kwargs['author_username'])
     if kwargs.get('tag_name'):
         posts = posts.filter(tags__name__in=[kwargs['tag_name']])
+    if kwargs.get('state'):
+        posts = posts.filter(state__name=kwargs['state'])
     posts = Paginator(posts, 3)
     try:
         page_number = request.GET.get('page')

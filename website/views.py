@@ -4,7 +4,7 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from website.forms import ContactForm
 from django.contrib import messages
 from django.conf import settings
-
+from jalali_date import datetime2jalali, date2jalali
 
 def index_view(request):
     posts = Post.objects.filter(status=1)
@@ -33,3 +33,15 @@ def links_view(request):
     return render(request, 'website/links.html')
 
 
+def api_view(request, state):
+    data = Post.objects.filter(status=1, state__name=state)
+    posts = []
+    for post in data:
+        item = {
+            'id': post.id,
+            'title': post.title,
+            'image': post.image.url,
+            'publisheddate': datetime2jalali(post.published_date).strftime('%y/%m/%d _ %H:%M:%S')
+        }
+        posts.append(item)
+    return JsonResponse({'posts': posts[:2]})

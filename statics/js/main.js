@@ -205,75 +205,111 @@ window.onclick = function (event) {
 }
 
 
-$(document).ready(function () {
-    document.cookie = 'name=alireza';
-    console.log(document.cookie);
+// $(document).ready(function () {
+//     document.cookie = 'name=alireza';
+//     console.log(document.cookie);
+//
+//     function getCookie(name) {
+//         var cookieValue = null;
+//         if (document.cookie && document.cookie !== '') {
+//             var cookies = document.cookie.split(';');
+//             for (var i = 0; i < cookies.length; i++) {
+//                 var cookie = cookies[i].trim();
+//                 // Does this cookie string begin with the name we want?
+//                 if (cookie.substring(0, name.length + 1) === (name + '=')) {
+//                     cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+//                     break;
+//                 }
+//             }
+//         }
+//         return cookieValue;
+//     }
+//
+//     var csrftoken = getCookie('csrftoken');
+//
+//
+//     $("#IranMap svg g path").click(function () {
+//
+//
+//         if ($(this).attr("data-active") != "active") {
+//             var cityid;
+//             var city = $(this).attr("class");
+//
+//             cityid = $(this).attr("cityid");
+//             $(".city-posts .posts").addClass("disable");
+//             $(".city-posts .more").addClass("disable");
+//             $(".city-posts h2").addClass("disable");
+//             $.ajax({
+//                 url: '',
+//                 type: 'post',
+//                 data: {
+//                     text: $(this).text(),
+//                     cat: cityid,
+//                     ppp: 4,
+//                     csrfmiddlewaretoken: csrftoken,
+//                 },
+//                 success: function (post) {
+//                     $(".city-posts .posts").removeClass("disable");
+//                     $(".city-posts .more").removeClass("disable");
+//                     $(".city-posts h2").removeClass("disable");
+//                     $(".city-posts").empty();
+//                     $(".city-posts").append(post);
+//                 },
+//             })
+//
+//             // $.post(ajaxUrl, {
+//             //     action: "map_post_ajax",
+//             //     ppp: 4,
+//             //     cat: cityid
+//             // }).success(function (posts) {
+//             //     $(".city-posts .posts").removeClass("disable");
+//             //     $(".city-posts .more").removeClass("disable");
+//             //     $(".city-posts h2").removeClass("disable");
+//             //     $(".city-posts").empty();
+//             //     $(".city-posts").append(posts);
+//             //
+//             // });
+//
+//         }
+//     });
+//
+//
+// });
 
-    function getCookie(name) {
-        var cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i].trim();
-                // Does this cookie string begin with the name we want?
-                if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
+
+const cityPost = document.getElementById('city-posts-id')
+// click on city and show post by category
+$("#IranMap svg g path").click(function () {
+    $(".loader2").removeClass("display-none");
+    var state = $(this).attr("data-title");
+    $.ajax({
+        url: `/api/${state}`,
+        type: 'get',
+        success: function (response) {
+            const posts = response.posts
+            setTimeout(() => {
+                $(".loader2").addClass("display-none");
+                $(".city-posts").empty();
+                cityPost.innerHTML = "<div class='title'><span><i class='fa fa-map-marker' aria-hidden='true'></i> " + state + "</span> <a href='/blog/state/" + state + "'>بیشتر ...</a></div>";
+                posts.forEach(el => {
+                    cityPost.innerHTML += `
+                            <div class="map-img">
+                                <a href="/blog/${el.id}">
+                                    <img src="${el.image}" alt="${el.title}">
+                                </a>
+                                <h2>
+                                    <a href="/blog/${el.id}"title="${el.title}">
+                                        ${el.title}
+                                    </a>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i> ${el.publisheddate}</span>
+                                </h2>
+                            </div>
+                        `
+                })
+            }, 100);
+        },
+        error: function (error) {
+            console.log(error)
         }
-        return cookieValue;
-    }
-
-    var csrftoken = getCookie('csrftoken');
-
-
-    $("#IranMap svg g path").click(function () {
-
-
-        if ($(this).attr("data-active") != "active") {
-            var cityid;
-            var city = $(this).attr("class");
-
-            cityid = $(this).attr("cityid");
-            $(".city-posts .posts").addClass("disable");
-            $(".city-posts .more").addClass("disable");
-            $(".city-posts h2").addClass("disable");
-            $.ajax({
-                url: '',
-                type: 'post',
-                data: {
-                    text: $(this).text(),
-                    cat: cityid,
-                    ppp: 4,
-                    csrfmiddlewaretoken: csrftoken,
-                },
-                success: function (post) {
-                    $(".city-posts .posts").removeClass("disable");
-                    $(".city-posts .more").removeClass("disable");
-                    $(".city-posts h2").removeClass("disable");
-                    $(".city-posts").empty();
-                    $(".city-posts").append(post);
-                },
-            })
-
-            // $.post(ajaxUrl, {
-            //     action: "map_post_ajax",
-            //     ppp: 4,
-            //     cat: cityid
-            // }).success(function (posts) {
-            //     $(".city-posts .posts").removeClass("disable");
-            //     $(".city-posts .more").removeClass("disable");
-            //     $(".city-posts h2").removeClass("disable");
-            //     $(".city-posts").empty();
-            //     $(".city-posts").append(posts);
-            //
-            // });
-
-        }
-    });
-
-
+    })
 });
-
-

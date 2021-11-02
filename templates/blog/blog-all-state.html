@@ -1,0 +1,12 @@
+{% load static %}
+<div class="title"><span><i class="fa fa-map-marker" aria-hidden="true"></i> همه استان ها</span>
+    <a href="{% url 'blog:blog-archive' %}"> بیشتر ...</a>
+</div>
+{% for post in posts %}
+<div class="map-tt">
+    <h3>
+        <a href="{% url 'blog:blog-single' pid=post.id %}" title="{{ post.title }}">{{ post.title }}
+        </a>
+    </h3>
+</div>
+{% endfor %}

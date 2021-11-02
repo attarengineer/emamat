@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Post, Category
+from blog.models import Post, Category, State
 
 
 @admin.register(Post)
@@ -14,4 +14,9 @@ class PostAdmin (admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin (admin.ModelAdmin):
+    list_display = ('name', 'id')
+
+
+@admin.register(State)
+class StateAdmin (admin.ModelAdmin):
     list_display = ('name', 'id')

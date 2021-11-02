@@ -81,7 +81,7 @@ def blog_similar_post(arg=4, cat=1):
     return {'posts': posts}
 
 
-@register.inclusion_tag('blog/blog-map-city.html')
-def blog_map_city(arg=4, cat=1):
-    posts = Post.objects.filter(status=1, category=cat).order_by('-published_date')[:arg]
+@register.inclusion_tag('blog/blog-all-state.html')
+def blog_all_state(arg=4):
+    posts = Post.objects.filter(status=1).order_by('-published_date')[:arg]
     return {'posts': posts}

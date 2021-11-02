@@ -16,11 +16,23 @@ class Category (models.Model):
         return self.name
 
 
+class State (models.Model):
+    name = models.CharField(max_length=255, verbose_name='نام استان')
+
+    class Meta:
+        verbose_name = 'استان'
+        verbose_name_plural = 'استان ها'
+
+    def __str__(self):
+        return self.name
+
+
 class Post (models.Model):
     title = models.CharField(max_length=255, verbose_name='عنوان')
     content = HTMLField(verbose_name='محتوا')
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, default=1, verbose_name='نویسنده')
     category = models.ManyToManyField(Category, verbose_name='دسته بندی')
+    state = models.ManyToManyField(State, verbose_name='استان')
     tags = TaggableManager(verbose_name='تگ')
     image = models.ImageField(upload_to='blog/', default='blog/default.jpg', verbose_name='عکس')
     counter_views = models.IntegerField(default=0, verbose_name='بازدید')
