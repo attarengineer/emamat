@@ -421,11 +421,7 @@
                 </div>
             </div>
             <br>
-            <b><i class="fa fa-sun-o" aria-hidden="true"></i> پنج شنبه, ۶ آبان , ۱۴۰۰</b>
-            <b><i class="fa fa-moon-o" aria-hidden="true"></i> 22 ربيع أول 1443</b>
-            <b><i class="fa fa-star" aria-hidden="true"></i>{% now "d-M-Y" %}</b>
-            <b><i class="fa fa-star"
-                  aria-hidden="true"></i>{{ request.user.date_joined|to_jalali:'%Y/%m/%d _ %H:%M:%S' }}</b>
+            <b><i class="fa fa-star" aria-hidden="true"></i>{{ current_datetime|to_jalali:'%Y/%m/%d' }}</b>
             <b><i class="fa fa-clock-o" aria-hidden="true"></i> ساعت <span id="clock"></span></b>
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         </div>

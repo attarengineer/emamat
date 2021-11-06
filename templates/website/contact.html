@@ -32,12 +32,86 @@
                                         </li>
                                     </ul>
                                     <p>&nbsp;</p>
-                                    <form method="post">
-                                        {% csrf_token %}
-                                        {{ form.as_p }}
-                                        <script src='https://www.google.com/recaptcha/api.js'></script>
-                                        <div class="g-recaptcha" data-sitekey="{{ site_key }}"></div>
-                                        <input type="submit" value="ارسال">
+                                    {#                                    <form method="post">#}
+                                    {#                                        {% csrf_token %}#}
+                                    {#                                        {{ form.as_p }}#}
+                                    {#                                        {{ form.captcha }}#}
+                                    {#                                        <input type="submit" value="ارسال">#}
+                                    {#                                        {% if messages %}#}
+                                    {#                                            {% for message in messages %}#}
+                                    {#                                                <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</div>#}
+                                    {#                                            {% endfor %}#}
+                                    {#                                        {% endif %}#}
+                                    {##}
+                                    {#                                        {% if form.errors %}#}
+                                    {#                                            <div class="alert alert-error">#}
+                                    {#                                                <h4>Please fix the following errors</h4>#}
+                                    {#                                                <ul>#}
+                                    {#                                                    {% for field in form %}#}
+                                    {#                                                        {% if field.errors %}#}
+                                    {#                                                            {% for error in field.errors %}#}
+                                    {#                                                                <li><a href="#id_{{ field.name }}"#}
+                                    {#                                                                       class="error">{{ error|escape }}</a></li>#}
+                                    {#                                                            {% endfor %}#}
+                                    {#                                                        {% endif %}#}
+                                    {#                                                    {% endfor %}#}
+                                    {#                                                </ul>#}
+                                    {#                                                {% if form.non_field_errors %}#}
+                                    {#                                                    {{ form.non_field_errors }}#}
+                                    {#                                                {% endif %}#}
+                                    {#                                            </div>#}
+                                    {#                                        {% endif %}#}
+                                    {#                                    </form>#}
+                                    <div role="form" class="wpcf7" id="wpcf7-f390-p388-o1" lang="fa-IR" dir="rtl">
+                                        <form action="{% url 'website:contact' %}" method="post"
+                                              class="wpcf7-form init">
+                                            {% csrf_token %}
+                                            <p>
+                                                <label> نام شما (الزامی)<br>
+                                                    <span class="wpcf7-form-control-wrap your-name">
+                                                        <input type="text" name="name" value="" size="40"
+                                                               class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                               aria-required="true" aria-invalid="false">
+                                                    </span>
+                                                </label>
+                                            </p>
+                                            <p>
+                                                <label> ایمیل شما (الزامی)<br>
+                                                    <span class="wpcf7-form-control-wrap your-email">
+                                                        <input type="email" name="email" value="" size="40"
+                                                               class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
+                                                               aria-required="true" aria-invalid="false">
+                                                    </span>
+                                                </label>
+                                            </p>
+                                            <p>
+                                                <label> موضوع<br>
+                                                    <span class="wpcf7-form-control-wrap your-subject">
+                                                        <input type="text" name="subject" value="" size="40"
+                                                               class="wpcf7-form-control wpcf7-text"
+                                                               aria-invalid="false">
+                                                    </span>
+                                                </label>
+                                            </p>
+                                            <p>
+                                                <label> پیام شما<br>
+                                                    <span class="wpcf7-form-control-wrap your-message">
+                                                        <textarea name="message" cols="40" rows="10"
+                                                                  class="wpcf7-form-control wpcf7-textarea"
+                                                                  aria-invalid="false"></textarea>
+                                                    </span>
+                                                </label>
+                                            </p>
+                                            <p>
+                                                متن مقابل را بنویسید:
+                                                {{ form.captcha }}
+                                            </p>
+                                            <p>
+                                                <input type="submit" value="ارسال" class="wpcf7-form-control wpcf7-submit">
+                                                <span class="ajax-loader"></span>
+                                            </p>
+                                        </form>
+
                                         {% if messages %}
                                             {% for message in messages %}
                                                 <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</div>
@@ -62,82 +136,7 @@
                                                 {% endif %}
                                             </div>
                                         {% endif %}
-                                    </form>
-
-{#                                    <div role="form" class="wpcf7" id="wpcf7-f390-p388-o1" lang="fa-IR" dir="rtl">#}
-{#                                        <form action="{% url 'website:contact' %}" method="post"#}
-{#                                              class="wpcf7-form init">#}
-{#                                            {% csrf_token %}#}
-{#                                            <p>#}
-{#                                                <label> نام شما (الزامی)<br>#}
-{#                                                    <span class="wpcf7-form-control-wrap your-name">#}
-{#                                                        <input type="text" name="name" value="" size="40"#}
-{#                                                               class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"#}
-{#                                                               aria-required="true" aria-invalid="false">#}
-{#                                                    </span>#}
-{#                                                </label>#}
-{#                                            </p>#}
-{#                                            <p>#}
-{#                                                <label> ایمیل شما (الزامی)<br>#}
-{#                                                    <span class="wpcf7-form-control-wrap your-email">#}
-{#                                                        <input type="email" name="email" value="" size="40"#}
-{#                                                               class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"#}
-{#                                                               aria-required="true" aria-invalid="false">#}
-{#                                                    </span>#}
-{#                                                </label>#}
-{#                                            </p>#}
-{#                                            <p>#}
-{#                                                <label> موضوع<br>#}
-{#                                                    <span class="wpcf7-form-control-wrap your-subject">#}
-{#                                                        <input type="text" name="subject" value="" size="40"#}
-{#                                                               class="wpcf7-form-control wpcf7-text"#}
-{#                                                               aria-invalid="false">#}
-{#                                                    </span>#}
-{#                                                </label>#}
-{#                                            </p>#}
-{#                                            <p>#}
-{#                                                <label> پیام شما<br>#}
-{#                                                    <span class="wpcf7-form-control-wrap your-message">#}
-{#                                                        <textarea name="message" cols="40" rows="10"#}
-{#                                                                  class="wpcf7-form-control wpcf7-textarea"#}
-{#                                                                  aria-invalid="false"></textarea>#}
-{#                                                    </span>#}
-{#                                                </label>#}
-{#                                            </p>#}
-{#                                            <p>#}
-{#                                                <script src='https://www.google.com/recaptcha/api.js'></script>#}
-{#                                            <div class="g-recaptcha" data-sitekey="{{ site_key }}"></div>#}
-{#                                            <input type="submit" value="ارسال"#}
-{#                                                   class="wpcf7-form-control wpcf7-submit">#}
-{#                                            <span class="ajax-loader"></span>#}
-{#                                            </p>#}
-{#                                        </form>#}
-{##}
-{#                                        {% if messages %}#}
-{#                                            {% for message in messages %}#}
-{#                                                <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</div>#}
-{#                                            {% endfor %}#}
-{#                                        {% endif %}#}
-{##}
-{#                                        {% if form.errors %}#}
-{#                                            <div class="alert alert-error">#}
-{#                                                <h4>Please fix the following errors</h4>#}
-{#                                                <ul>#}
-{#                                                    {% for field in form %}#}
-{#                                                        {% if field.errors %}#}
-{#                                                            {% for error in field.errors %}#}
-{#                                                                <li><a href="#id_{{ field.name }}"#}
-{#                                                                       class="error">{{ error|escape }}</a></li>#}
-{#                                                            {% endfor %}#}
-{#                                                        {% endif %}#}
-{#                                                    {% endfor %}#}
-{#                                                </ul>#}
-{#                                                {% if form.non_field_errors %}#}
-{#                                                    {{ form.non_field_errors }}#}
-{#                                                {% endif %}#}
-{#                                            </div>#}
-{#                                        {% endif %}#}
-{#                                    </div>#}
+                                    </div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>

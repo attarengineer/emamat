@@ -10547,7 +10547,7 @@ a.liked:focus {
 
 a.liked span.sl-count,
 .sl-count {
-    color: #ddd;
+    color: #000000;
     font-family: Num_Light;
     font-size: 14px;
     padding-right: 5px;
@@ -10581,7 +10581,7 @@ a.liked span.sl-count,
     font-family: Num_Light;
     text-transform: uppercase;
     vertical-align: middle;
-    color: #ddd;
+    color: #000000;
     padding-bottom: 10px;
     padding-right: 5px;
 }
@@ -17041,6 +17041,57 @@ div.tab-post strong.active, .timeline .polist .info-txt .info-txt-icon {
     animation: spin 2s linear infinite;
 }
 
+.button {
+  position: relative;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.button:active {
+  background: rgba(255, 255, 255, 0);
+}
+
+.button__text {
+  font: bold 20px "Quicksand", san-serif;
+  color: #000000;
+  transition: all 0.2s;
+}
+
+.button--loading .button__text {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.button--loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #000000;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 /* Safari */
 @-webkit-keyframes spin {
     0% {
@@ -17062,4 +17113,8 @@ div.tab-post strong.active, .timeline .polist .info-txt .info-txt-icon {
 
 .display-none {
     display: none;
+}
+
+.red {
+    color: red;
 }

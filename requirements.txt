@@ -7,5 +7,6 @@ django-robots
 django-debug-toolbar
 six
 django-taggit==1.4.0
-django-tinymce
+django-summernote
 django-jalali-date
+django-simple-captcha

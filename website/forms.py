@@ -1,10 +1,13 @@
 from django import forms
 from website.models import Contact
+from captcha.fields import CaptchaField
 from jalali_date.fields import JalaliDateField, SplitJalaliDateTimeField
 from jalali_date.widgets import AdminJalaliDateWidget, AdminSplitJalaliDateTime
 
 
 class ContactForm(forms.ModelForm):
+    captcha = CaptchaField()
+
     class Meta:
         model = Contact
         fields = '__all__'

@@ -276,9 +276,8 @@ window.onclick = function (event) {
 //
 // });
 
-
-const cityPost = document.getElementById('city-posts-id')
 // click on city and show post by category
+const cityPost = document.getElementById('city-posts-id')
 $("#IranMap svg g path").click(function () {
     $(".loader2").removeClass("display-none");
     var state = $(this).attr("data-title");
@@ -313,3 +312,49 @@ $("#IranMap svg g path").click(function () {
         }
     })
 });
+
+
+// csrftoken ajax in django
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+const csrftoken = getCookie('csrftoken');
+
+
+// like post
+$(".post_like .button").click(function (e) {
+    e.preventDefault()
+    $(".post_like .button").addClass("button--loading");
+    const clickedId = document.getElementById('like-button').getAttribute('data-form-id')
+    $.ajax({
+        type: 'POST',
+        url: `/api/`,
+        data: {
+            'csrfmiddlewaretoken': csrftoken,
+            'pk': clickedId,
+        },
+        success: function (response){
+            setTimeout(() => {
+                $(".post_like .button").removeClass("button--loading");
+                $(".sl-icon").addClass("red");
+                $(".post_like .button .sl-count").innerHTML = posts.like
+                console.log(response);
+            }, 1000);
+        },
+        error: function (error){
+            console.log(error)
+        }
+    })
+})
